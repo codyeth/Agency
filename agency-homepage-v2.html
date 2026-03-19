@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GrowAgency — Giải pháp Marketing đa kênh TikTok · Shopee · Facebook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Be Vietnam Pro',sans-serif;color:#0F172A;background:#fff;overflow-x:hidden}
+:root{
+  --blue:#1B6DEA;--blue-dark:#0F4FB8;--blue-deep:#0A2240;
+  --blue-light:#EEF5FF;--blue-mid:#DBEAFE;
+  --green:#10B981;--accent:#F59E0B;--pink:#F43F5E;
+  --muted:#64748B;--border:#E2E8F0;
+  --pill:100px;--card:18px;
+}
+
+/* ── NAVBAR ── */
+.navbar{position:sticky;top:0;z-index:200;height:64px;padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.06);transition:box-shadow .3s}
+.navbar.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.nav-logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;
+  color:var(--blue);text-decoration:none;letter-spacing:-.5px}
+.logo-mark{width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,#1B6DEA,#0A2240);
+  display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:20px;height:20px}
+.nav-menu{display:flex;align-items:center;gap:2px;list-style:none}
+.nav-menu a{padding:7px 14px;border-radius:8px;font-size:14px;font-weight:500;
+  color:#0F172A;text-decoration:none;transition:all .18s;display:flex;align-items:center;gap:3px}
+.nav-menu a:hover{background:var(--blue-light);color:var(--blue)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn-ghost{padding:8px 20px;border-radius:var(--pill);border:1.5px solid var(--border);
+  font-size:14px;font-weight:600;color:#0F172A;background:transparent;cursor:pointer;
+  text-decoration:none;transition:all .2s}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.btn-blue{padding:8px 22px;border-radius:var(--pill);background:var(--blue);color:#fff;
+  font-size:14px;font-weight:700;border:none;cursor:pointer;text-decoration:none;
+  box-shadow:0 4px 14px rgba(27,109,234,.35);transition:all .2s;
+  display:inline-flex;align-items:center;gap:6px}
+.btn-blue:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(27,109,234,.4)}
+
+/* ── HERO ── */
+.hero{min-height:580px;
+  background:linear-gradient(160deg,#1B6DEA 0%,#0c3d8e 55%,#071e3d 100%);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;
+  padding:72px 48px 0;text-align:center}
+.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(99,179,237,.18) 0%,transparent 70%);
+  top:-200px;left:-100px;animation:orbMove 12s ease-in-out infinite}
+.hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(167,139,250,.14) 0%,transparent 70%);
+  bottom:-100px;right:-100px;animation:orbMove 10s ease-in-out infinite reverse}
+@keyframes orbMove{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}}
+
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.cdot{position:absolute;border-radius:50%;
+  animation:floatUp var(--d,8s) linear infinite;opacity:0}
+@keyframes floatUp{
+  0%{transform:translateY(110%) rotate(0deg);opacity:0}
+  10%{opacity:.6}90%{opacity:.4}
+  100%{transform:translateY(-10px) rotate(360deg);opacity:0}}
+
+.hero-tag{position:relative;z-index:2;
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:var(--pill);padding:6px 18px;
+  font-size:13px;font-weight:600;color:#fff;margin-bottom:24px;
+  animation:fadeUp .7s ease both}
+.clive{width:8px;height:8px;border-radius:50%;background:#34D399;
+  animation:livePulse 2s infinite}
+@keyframes livePulse{0%,100%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}50%{box-shadow:0 0 0 6px rgba(52,211,153,0)}}
+
+.hero h1{position:relative;z-index:2;font-size:clamp(38px,5.5vw,68px);
+  font-weight:900;line-height:1.08;color:#fff;letter-spacing:-.03em;
+  margin-bottom:20px;animation:fadeUp .7s ease .1s both}
+.hl{color:#FCD34D;position:relative;display:inline-block}
+.hl::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#FCD34D,#F59E0B);border-radius:2px;
+  animation:expandLine .8s ease .8s both;transform-origin:left}
+@keyframes expandLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+.hero-sub{position:relative;z-index:2;font-size:17px;color:rgba(255,255,255,.78);
+  max-width:540px;line-height:1.7;margin:0 auto 40px;
+  animation:fadeUp .7s ease .2s both}
+
+.hero-ctas{position:relative;z-index:2;display:flex;gap:14px;justify-content:center;
+  margin-bottom:60px;animation:fadeUp .7s ease .3s both}
+.btn-hw{padding:15px 30px;border-radius:var(--pill);background:#fff;color:var(--blue);
+  font-size:15px;font-weight:800;text-decoration:none;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;
+  box-shadow:0 8px 28px rgba(0,0,0,.18);transition:all .22s}
+.btn-hw:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.24)}
+.btn-ho{padding:15px 30px;border-radius:var(--pill);
+  background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);
+  color:#fff;font-size:15px;font-weight:700;text-decoration:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;transition:all .22s}
+.btn-ho:hover{background:rgba(255,255,255,.2)}
+
+.hero-card{position:relative;z-index:2;
+  background:rgba(255,255,255,.1);backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.18);border-radius:24px;
+  padding:32px 48px;max-width:700px;width:100%;
+  display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;
+  gap:24px;align-items:center;margin-bottom:-52px;
+  animation:fadeUp .8s ease .4s both}
+.pcol{text-align:center}
+.pbadge{display:inline-block;background:rgba(52,211,153,.22);color:#6EE7B7;
+  font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  padding:3px 10px;border-radius:var(--pill);margin-bottom:10px}
+.pval{font-size:36px;font-weight:900;color:#fff;line-height:1}
+.plbl{font-size:12px;color:rgba(255,255,255,.6);margin-top:6px;line-height:1.4}
+.pdiv{background:rgba(255,255,255,.15);height:60px;width:1px;margin:0 auto}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── WAVE ── */
+.wave-svg{display:block;width:100%}
+
+/* ── STATS ── */
+.stats{padding:80px 48px 60px;background:#fff}
+.stats-inner{max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1.5px solid var(--border);border-radius:24px;overflow:hidden}
+.sc{padding:32px 28px;text-align:center;border-right:1.5px solid var(--border);
+  opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}
+.sc:last-child{border-right:none}
+.sc.in{opacity:1;transform:none}
+.sc:nth-child(2).in{transition-delay:.1s}
+.sc:nth-child(3).in{transition-delay:.2s}
+.sc:nth-child(4).in{transition-delay:.3s}
+.snum{font-size:44px;font-weight:900;color:var(--blue);line-height:1;
+  display:flex;align-items:baseline;justify-content:center;gap:2px}
+.sunit{font-size:28px;font-weight:900}
+.slbl{font-size:13px;font-weight:500;color:var(--muted);margin-top:8px}
+
+/* ── SECTION SHARED ── */
+.section{padding:96px 48px}
+.bg-light{background:var(--blue-light)}
+.container{max-width:1120px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue-mid);color:var(--blue);
+  font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  padding:5px 14px;border-radius:var(--pill);margin-bottom:14px}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--blue)}
+h2.stitle{font-size:clamp(28px,3.5vw,46px);font-weight:900;line-height:1.12;
+  letter-spacing:-.02em;margin-bottom:16px}
+p.sdesc{font-size:16px;color:var(--muted);line-height:1.75;max-width:560px}
+
+/* ── FEATURE TABS ── */
+.ftabs{padding:96px 48px;background:#fff}
+.ftabs-head{text-align:center;margin-bottom:44px}
+.ftabs-head .sdesc{margin:0 auto}
+.tabs-nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:56px}
+.tbtn{padding:10px 22px;border-radius:var(--pill);border:1.5px solid var(--border);
+  font-size:14px;font-weight:600;color:var(--muted);background:#fff;cursor:pointer;
+  transition:all .22s;display:flex;align-items:center;gap:7px}
+.tbtn:hover{border-color:var(--blue);color:var(--blue)}
+.tbtn.on{background:var(--blue);border-color:var(--blue);color:#fff;
+  box-shadow:0 4px 16px rgba(27,109,234,.3)}
+.tpanel{display:none;animation:fadeUp .4s ease}
+.tpanel.on{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+
+/* Visual side */
+.tvisual{position:relative;background:linear-gradient(135deg,var(--blue-light),var(--blue-mid));
+  border-radius:24px;overflow:visible;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center}
+.tscreen{width:82%;aspect-ratio:16/10;background:#fff;border-radius:14px;
+  box-shadow:0 16px 48px rgba(27,109,234,.18);overflow:hidden;position:relative}
+.sbar{height:32px;background:#F8FAFC;border-bottom:1px solid #E2E8F0;
+  display:flex;align-items:center;padding:0 14px;gap:7px}
+.sd{width:10px;height:10px;border-radius:50%}
+.sbody{padding:16px}
+.srow{height:10px;background:#E2E8F0;border-radius:5px;margin-bottom:8px}
+.srow.b{background:var(--blue);width:50%}
+.srow.sh{width:65%}
+.srow.md{width:80%}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.scard{background:var(--blue-light);border-radius:10px;padding:12px;text-align:center}
+.scard .v{font-size:18px;font-weight:900;color:var(--blue)}
+.scard .l{font-size:10px;color:var(--muted);margin-top:3px}
+
+/* Floating badges */
+.fbadge{position:absolute;z-index:10;background:#fff;border-radius:12px;
+  padding:8px 14px;font-size:12px;font-weight:700;
+  box-shadow:0 6px 20px rgba(0,0,0,.12);
+  display:flex;align-items:center;gap:7px;white-space:nowrap;
+  animation:floatB var(--fd,4s) ease-in-out infinite}
+.fbadge .fi{font-size:16px}
+.fbadge.tr{top:14%;right:-6%;--fd:4s}
+.fbadge.bl{bottom:14%;left:-5%;--fd:5s;animation-delay:.8s}
+.fbadge.ml{top:45%;left:-6%;--fd:4.5s;animation-delay:.4s}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* Feature list */
+.tlist{display:flex;flex-direction:column;gap:16px}
+.titem{display:flex;gap:16px;padding:18px 20px;border-radius:16px;
+  border:2px solid transparent;cursor:pointer;transition:all .22s}
+.titem:hover,.titem.on{background:var(--blue-light);border-color:var(--blue)}
+.ticon{width:46px;height:46px;border-radius:13px;background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:21px;
+  flex-shrink:0;transition:transform .22s}
+.titem:hover .ticon{transform:scale(1.08)}
+.titem h3{font-size:15px;font-weight:800;margin-bottom:5px}
+.titem p{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* ── SERVICES ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.svc-card{background:#fff;border-radius:22px;padding:34px;border:2px solid transparent;
+  transition:all .3s;cursor:pointer;
+  opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s,border-color .3s,box-shadow .3s}
+.svc-card.in{opacity:1;transform:none}
+.svc-card:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(27,109,234,.12);transform:translateY(-4px)}
+.svc-card:nth-child(2){transition-delay:.08s}.svc-card:nth-child(3){transition-delay:.16s}
+.svc-card:nth-child(4){transition-delay:.04s}.svc-card:nth-child(5){transition-delay:.12s}
+.svc-card:nth-child(6){transition-delay:.2s}
+.svc-icon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;
+  justify-content:center;font-size:27px;margin-bottom:22px}
+.svc-card h3{font-size:17px;font-weight:800;margin-bottom:10px}
+.svc-card p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.stag{padding:4px 11px;border-radius:var(--pill);font-size:11px;font-weight:700;
+  background:var(--blue-light);color:var(--blue)}
+
+/* ── CRM SECTION ── */
+.crm-grid{max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.crm-visual{position:relative;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center}
+.cphone{width:75%;background:#fff;border-radius:28px;
+  box-shadow:0 24px 64px rgba(27,109,234,.18);padding:20px;position:relative}
+.ph-header{background:var(--blue);border-radius:16px;padding:14px 18px;
+  margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ph-ava{width:36px;height:36px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ph-name{font-size:13px;font-weight:700;color:#fff}
+.ph-status{font-size:11px;color:rgba(255,255,255,.7)}
+.chat-msgs{display:flex;flex-direction:column;gap:10px;padding:4px 0 8px}
+.cmsg{padding:10px 14px;border-radius:14px;font-size:12px;line-height:1.5;
+  max-width:85%;opacity:0;animation:msgIn .5s ease forwards}
+.cmsg.bot{background:var(--blue-light);color:#0F172A;border-bottom-left-radius:4px;align-self:flex-start}
+.cmsg.usr{background:var(--blue);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.cmsg:nth-child(1){animation-delay:.5s}.cmsg:nth-child(2){animation-delay:1.2s}
+.cmsg:nth-child(3){animation-delay:2s}.cmsg:nth-child(4){animation-delay:2.8s}
+@keyframes msgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.chat-action{background:var(--blue);color:#fff;border-radius:10px;padding:9px 14px;
+  font-size:12px;font-weight:700;text-align:center;margin-top:4px;
+  opacity:0;animation:msgIn .5s ease 3.5s forwards;cursor:pointer}
+.crmfloat{position:absolute;background:#fff;border-radius:14px;padding:10px 14px;
+  box-shadow:0 6px 24px rgba(0,0,0,.1);font-size:12px;font-weight:700;
+  display:flex;align-items:center;gap:8px;
+  animation:floatB 4s ease-in-out infinite}
+.crmfloat.f1{top:8%;right:-8%}.crmfloat.f2{bottom:12%;left:-10%;animation-delay:1s}
+.crmfloat.f3{top:42%;left:-12%;animation-delay:.6s}
+.crmfloat .fv{font-size:18px;font-weight:900;color:var(--blue)}
+.crmfloat .fl{font-size:10px;color:var(--muted);font-weight:500}
+.feat-list{margin-top:32px;display:flex;flex-direction:column;gap:18px}
+.feat-row{display:flex;align-items:flex-start;gap:14px}
+.feat-chk{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px}
+.feat-row h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.feat-row p{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* ── OPERATIONS ── */
+.ops-item{max-width:1120px;margin:0 auto 80px;
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ops-item:last-child{margin-bottom:0}
+.ops-item.rev{direction:rtl}.ops-item.rev>*{direction:ltr}
+.ops-vis{background:linear-gradient(135deg,var(--blue-light),var(--blue-mid));
+  border-radius:24px;padding:36px;display:flex;align-items:center;
+  justify-content:center;min-height:340px;position:relative;overflow:hidden}
+.ops-screen{background:#fff;border-radius:16px;
+  box-shadow:0 16px 48px rgba(27,109,234,.14);padding:20px;width:100%}
+.ops-sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.ops-st{font-size:13px;font-weight:800}
+.ops-sb{padding:3px 9px;border-radius:var(--pill);font-size:10px;font-weight:700;
+  background:var(--blue-light);color:var(--blue)}
+.ops-tr{display:grid;grid-template-columns:1fr 1fr 80px 70px;gap:8px;padding:10px 0;
+  border-bottom:1px solid #F1F5F9;align-items:center;font-size:12px}
+.ops-tr.hd{font-weight:700;color:var(--muted);font-size:11px}
+.ops-stat{padding:3px 9px;border-radius:var(--pill);font-size:10px;font-weight:700;text-align:center;width:fit-content}
+.ops-stat.g{background:#DCFCE7;color:#16A34A}.ops-stat.y{background:#FEF9C3;color:#CA8A04}
+.ops-stat.b{background:var(--blue-light);color:var(--blue)}
+.ops-txt .otag{display:inline-block;background:var(--blue-mid);color:var(--blue);
+  font-size:12px;font-weight:700;padding:4px 12px;border-radius:var(--pill);margin-bottom:16px}
+.ops-txt h2{font-size:clamp(24px,3vw,38px);font-weight:900;line-height:1.15;
+  margin-bottom:14px;letter-spacing:-.02em}
+.ops-txt p{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:28px}
+.ops-links{display:flex;flex-direction:column;gap:12px}
+.olink{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;
+  color:#0F172A;text-decoration:none;transition:color .2s}
+.olink:hover{color:var(--blue)}.olink .arr{color:var(--blue);transition:transform .2s}
+.olink:hover .arr{transform:translateX(4px)}
+
+/* ── HOW IT WORKS ── */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:60px;position:relative}
+.steps::before{content:'';position:absolute;top:52px;
+  left:calc(12.5% + 8px);right:calc(12.5% + 8px);
+  height:2px;background:linear-gradient(90deg,var(--blue),#93C5FD);border-radius:2px}
+.step{text-align:center;position:relative;
+  opacity:0;transform:translateY(22px);transition:opacity .55s,transform .55s}
+.step.in{opacity:1;transform:none}
+.step:nth-child(2){transition-delay:.14s}.step:nth-child(3){transition-delay:.28s}
+.step:nth-child(4){transition-delay:.42s}
+.step-n{width:80px;height:80px;border-radius:50%;background:var(--blue);color:#fff;
+  font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 22px;position:relative;z-index:1;
+  box-shadow:0 6px 22px rgba(27,109,234,.38)}
+.step h3{font-size:16px;font-weight:800;margin-bottom:10px}
+.step p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── LOGO MARQUEE ── */
+.logos{padding:56px 0;background:#fff;overflow:hidden}
+.logos-lbl{text-align:center;font-size:13px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+.mtrack{display:flex;gap:0;width:max-content;animation:ticker 30s linear infinite}
+.mtrack:hover{animation-play-state:paused}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lchip{padding:16px 36px;font-size:14px;font-weight:800;color:#94A3B8;
+  border-right:1px solid #F1F5F9;white-space:nowrap;transition:color .2s;cursor:default}
+.lchip:hover{color:var(--blue)}
+.mfade{position:relative}
+.mfade::before,.mfade::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2}
+.mfade::before{left:0;background:linear-gradient(to right,#fff,transparent)}
+.mfade::after{right:0;background:linear-gradient(to left,#fff,transparent)}
+
+/* ── TESTIMONIALS ── */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.tcard{background:#fff;border-radius:22px;padding:32px;transition:all .3s;
+  opacity:0;transform:translateY(20px)}
+.tcard.in{opacity:1;transform:none}
+.tcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(27,109,234,.12)}
+.tcard:nth-child(2){transition-delay:.1s}.tcard:nth-child(3){transition-delay:.2s}
+.tstars{color:var(--accent);font-size:15px;letter-spacing:2px;margin-bottom:16px}
+.ttxt{font-size:14px;line-height:1.75;color:#0F172A;margin-bottom:22px;font-style:italic}
+.tauthor{display:flex;align-items:center;gap:12px}
+.tava{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:17px;font-weight:900;color:#fff;flex-shrink:0}
+.tname{font-size:14px;font-weight:800}
+.trole{font-size:12px;color:var(--muted)}
+
+/* ── PRICING ── */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;align-items:start}
+.pcard{border:2px solid var(--border);border-radius:24px;padding:36px;
+  transition:all .28s;position:relative;overflow:hidden}
+.pcard:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(27,109,234,.1)}
+.pcard.feat{border-color:var(--blue);background:var(--blue);color:#fff}
+.ptag{position:absolute;top:20px;right:20px;background:var(--accent);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  padding:4px 10px;border-radius:var(--pill)}
+.ptier{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.ptier.r{color:var(--muted)}.ptier.f{color:rgba(255,255,255,.7)}
+.pamt{font-size:42px;font-weight:900;line-height:1;margin-bottom:6px}
+.pamt span{font-size:16px;font-weight:600}
+.pper{font-size:13px;margin-bottom:24px}
+.pper.r{color:var(--muted)}.pper.f{color:rgba(255,255,255,.7)}
+.pdiv{height:1px;background:var(--border);margin-bottom:24px}
+.pdiv.f{background:rgba(255,255,255,.2)}
+.pfeat{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.pfeat li{font-size:13px;display:flex;align-items:center;gap:10px}
+.pchk{width:20px;height:20px;border-radius:50%;background:var(--blue-light);
+  color:var(--blue);display:flex;align-items:center;justify-content:center;
+  font-size:11px;flex-shrink:0}
+.pcard.feat .pchk{background:rgba(255,255,255,.2);color:#fff}
+.pbtn{width:100%;padding:12px;border-radius:var(--pill);font-size:14px;font-weight:700;
+  cursor:pointer;transition:all .22s;text-align:center;text-decoration:none;
+  display:block;border:none}
+.pbtn.out{border:1.5px solid var(--blue);color:var(--blue);background:transparent}
+.pbtn.out:hover{background:var(--blue);color:#fff}
+.pbtn.sol{background:#fff;color:var(--blue);box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.pbtn.sol:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+
+/* ── CTA BOTTOM ── */
+.cta-bot{padding:96px 48px;
+  background:linear-gradient(155deg,var(--blue) 0%,var(--blue-deep) 100%);
+  position:relative;overflow:hidden;text-align:center}
+.cta-bot::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;
+  background:rgba(255,255,255,.04);top:-150px;left:-100px}
+.cta-bot::after{content:'';position:absolute;width:400px;height:400px;border-radius:50%;
+  background:rgba(255,255,255,.04);bottom:-100px;right:-60px}
+.cta-bot h2{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;
+  margin-bottom:18px;position:relative;z-index:1}
+.cta-bot p{font-size:17px;color:rgba(255,255,255,.72);margin-bottom:40px;
+  position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;position:relative;z-index:1}
+.btn-cw{padding:16px 36px;border-radius:var(--pill);background:#fff;color:var(--blue);
+  font-size:16px;font-weight:800;text-decoration:none;border:none;cursor:pointer;
+  box-shadow:0 8px 28px rgba(0,0,0,.18);display:inline-flex;align-items:center;gap:8px;transition:all .22s}
+.btn-cw:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.24)}
+.btn-co{padding:16px 36px;border-radius:var(--pill);
+  background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);
+  color:#fff;font-size:16px;font-weight:700;text-decoration:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;transition:all .22s}
+.btn-co:hover{background:rgba(255,255,255,.18)}
+
+/* ── FOOTER ── */
+footer{background:#060F1E;color:rgba(255,255,255,.55);padding:72px 48px 36px}
+.fgrid{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px;
+  max-width:1120px;margin-left:auto;margin-right:auto}
+.fbrand .fname{font-size:22px;font-weight:900;color:#fff;margin-bottom:14px}
+.fbrand p{font-size:13px;line-height:1.75;max-width:240px;margin-bottom:24px}
+.fsocs{display:flex;gap:8px}
+.fsoc{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;font-size:16px;
+  cursor:pointer;transition:background .2s}
+.fsoc:hover{background:var(--blue)}
+.fcol h5{font-size:11px;font-weight:800;color:#fff;text-transform:uppercase;
+  letter-spacing:1.2px;margin-bottom:20px}
+.fcol a{display:block;font-size:13px;color:rgba(255,255,255,.5);
+  text-decoration:none;margin-bottom:11px;transition:color .2s}
+.fcol a:hover{color:#fff}
+.fbot{max-width:1120px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08);
+  padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="nav">
+  <a class="nav-logo" href="#">
+    <div class="logo-mark">
+      <svg viewBox="0 0 20 20" fill="none">
+        <path d="M3 15L7 7L12 12L15 8L19 15H3Z" fill="white" opacity=".9"/>
+        <circle cx="16" cy="6" r="2.5" fill="#FCD34D"/>
+      </svg>
+    </div>
+    GrowAgency
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#">Giải pháp ▾</a></li>
+    <li><a href="#pricing">Bảng giá</a></li>
+    <li><a href="#">Khách hàng</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Hỗ trợ ▾</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#" class="btn-ghost">Đăng nhập</a>
+    <a href="#" class="btn-blue">Bắt đầu miễn phí →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="confetti">
+    <div class="cdot" style="width:10px;height:10px;background:#FCD34D;left:8%;--d:9s;animation-delay:0s"></div>
+    <div class="cdot" style="width:7px;height:7px;background:#34D399;left:18%;--d:7s;animation-delay:1.2s"></div>
+    <div class="cdot" style="width:12px;height:12px;background:#F43F5E;left:28%;--d:11s;animation-delay:.5s;border-radius:2px"></div>
+    <div class="cdot" style="width:8px;height:8px;background:#8B5CF6;left:72%;--d:8s;animation-delay:2s"></div>
+    <div class="cdot" style="width:14px;height:14px;background:#FCD34D;left:82%;--d:10s;animation-delay:.8s;border-radius:3px"></div>
+    <div class="cdot" style="width:6px;height:6px;background:#6EE7B7;left:90%;--d:7.5s;animation-delay:1.5s"></div>
+    <div class="cdot" style="width:9px;height:9px;background:#93C5FD;left:45%;--d:9.5s;animation-delay:.3s"></div>
+    <div class="cdot" style="width:11px;height:11px;background:#FB7185;left:58%;--d:8.5s;animation-delay:1.8s;border-radius:2px"></div>
+  </div>
+
+  <div class="hero-tag"><div class="clive"></div>Đối tác chính thức · TikTok · Shopee · Meta</div>
+  <h1>Marketing Đa Kênh<br><span class="hl">Vượt Trội</span></h1>
+  <p class="hero-sub">Giải pháp vận hành toàn diện giúp doanh nghiệp bứt phá doanh thu trên TikTok Shop, Shopee, Facebook — tất cả trong một hệ thống duy nhất.</p>
+
+  <div class="hero-ctas">
+    <a href="#" class="btn-hw"><span>🚀</span> Bắt đầu miễn phí</a>
+    <a href="#" class="btn-ho"><span>▶</span> Xem demo</a>
+  </div>
+
+  <div class="hero-card">
+    <div class="pcol"><div class="pbadge">Tặng</div><div class="pval">100%</div><div class="plbl">Phí setup gian hàng<br>tháng đầu tiên</div></div>
+    <div class="pdiv"></div>
+    <div class="pcol"><div class="pbadge">Giảm</div><div class="pval">50%</div><div class="plbl">Chi phí vận hành<br>3 tháng đầu</div></div>
+    <div class="pdiv"></div>
+    <div class="pcol"><div class="pbadge">Miễn phí</div><div class="pval">14</div><div class="plbl">Ngày dùng thử<br>toàn bộ tính năng</div></div>
+  </div>
+</section>
+
+<!-- WAVE -->
+<svg class="wave-svg" viewBox="0 0 1440 64" fill="none" style="background:#fff">
+  <path d="M0 0C360 64 720 64 1080 32C1260 16 1380 0 1440 0V64H0V0Z" fill="#EEF5FF"/>
+</svg>
+<div style="height:52px;background:#fff"></div>
+
+<!-- STATS -->
+<section class="stats" id="stats">
+  <div class="stats-inner">
+    <div class="sc">
+      <div class="snum"><span class="sv" data-t="2500">0</span><span class="sunit">+</span></div>
+      <div class="slbl">Khách hàng tin dùng</div>
+    </div>
+    <div class="sc">
+      <div class="snum"><span class="sv" data-t="3" data-s=" sàn">0</span></div>
+      <div class="slbl">TikTok · Shopee · Facebook</div>
+    </div>
+    <div class="sc">
+      <div class="snum"><span class="sv" data-t="500">0</span><span class="sunit">+</span></div>
+      <div class="slbl">Dự án triển khai thực tế</div>
+    </div>
+    <div class="sc">
+      <div class="snum"><span class="sv" data-t="10">0</span><span class="sunit">x</span></div>
+      <div class="slbl">GMV trung bình sau 6 tháng</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE TABS -->
+<section class="ftabs" id="features">
+  <div class="container">
+    <div class="ftabs-head">
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Giải pháp toàn diện</div>
+      <h2 class="stitle">Bán hàng đa kênh dễ dàng</h2>
+      <p class="sdesc">Doanh nghiệp mở rộng kênh bán nhanh chóng, tăng doanh thu vượt trội trên mọi nền tảng.</p>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tbtn on" data-tab="tt">🎵 TikTok Shop</button>
+      <button class="tbtn" data-tab="sp">🛒 Shopee</button>
+      <button class="tbtn" data-tab="fb">📘 Facebook</button>
+      <button class="tbtn" data-tab="ls">📡 Livestream</button>
+      <button class="tbtn" data-tab="ads">🎯 Performance Ads</button>
+    </div>
+
+    <!-- TikTok -->
+    <div class="tpanel on" id="tp-tt">
+      <div class="tvisual">
+        <!-- 👉 Thay src= bằng video của bạn khi có: <video autoplay loop muted playsinline src="your-tiktok-demo.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:24px"></video> -->
+        <div class="tscreen">
+          <div class="sbar"><div class="sd" style="background:#FF5F57"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#28CA41"></div></div>
+          <div class="sbody">
+            <div class="srow b"></div><div style="height:8px"></div>
+            <div class="srow md"></div><div class="srow sh"></div>
+            <div class="sgrid">
+              <div class="scard"><div class="v">x10</div><div class="l">GMV tăng</div></div>
+              <div class="scard"><div class="v">4.8★</div><div class="l">Đánh giá</div></div>
+              <div class="scard"><div class="v">85%</div><div class="l">CVR</div></div>
+              <div class="scard"><div class="v">2.5K</div><div class="l">Đơn/tháng</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fbadge tr"><span class="fi">📈</span><div><div style="font-size:14px;font-weight:900;color:#10B981">+800%</div><div style="font-size:10px;color:#64748B">Doanh thu / tháng</div></div></div>
+        <div class="fbadge bl"><span class="fi">🛒</span><div><div style="font-size:14px;font-weight:900;color:var(--blue)">2,340</div><div style="font-size:10px;color:#64748B">Đơn hôm nay</div></div></div>
+        <div class="fbadge ml"><span class="fi">🏆</span><div style="font-size:12px">Top 10 Partner<br><b style="color:var(--blue)">TikTok Shop</b></div></div>
+      </div>
+      <div class="tlist">
+        <div class="titem on"><div class="ticon">🏪</div><div><h3>Setup gian hàng chuẩn SEO</h3><p>Xây dựng gian hàng chuyên nghiệp, tối ưu từ khóa, hình ảnh sản phẩm và cấu trúc danh mục đúng chuẩn TikTok Shop.</p></div></div>
+        <div class="titem"><div class="ticon">📹</div><div><h3>Video bán hàng viral</h3><p>Sản xuất video ngắn bắt trend, gắn link sản phẩm trực tiếp, tối ưu thuật toán For You Page của TikTok.</p></div></div>
+        <div class="titem"><div class="ticon">💰</div><div><h3>TikTok Ads chuyển đổi cao</h3><p>Chạy VSA, CPAS, Product Shopping Ads với target chính xác, đo ROI rõ ràng từng đơn hàng thực tế.</p></div></div>
+      </div>
+    </div>
+
+    <!-- Shopee -->
+    <div class="tpanel" id="tp-sp">
+      <div class="tvisual" style="background:linear-gradient(135deg,#FFF5F5,#FECACA)">
+        <div class="tscreen">
+          <div class="sbar"><div class="sd" style="background:#FF5F57"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#28CA41"></div></div>
+          <div class="sbody">
+            <div class="srow" style="background:#EE4D2D;width:45%;height:12px;border-radius:6px"></div><div style="height:8px"></div>
+            <div class="srow md"></div><div class="srow sh"></div>
+            <div class="sgrid">
+              <div class="scard"><div class="v" style="color:#EE4D2D">Top 1</div><div class="l">Agency</div></div>
+              <div class="scard"><div class="v">60K+</div><div class="l">Merchant</div></div>
+              <div class="scard"><div class="v">37%</div><div class="l">GMV↑</div></div>
+              <div class="scard"><div class="v">Mall ✓</div><div class="l">Đối tác</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fbadge tr" style="background:#EE4D2D;color:#fff"><span>🏆</span> Top 1 Shopee Agency</div>
+        <div class="fbadge bl"><span class="fi">📦</span><div><div style="font-size:14px;font-weight:900;color:#EE4D2D">15,280</div><div style="font-size:10px;color:#64748B">Đơn / tuần</div></div></div>
+      </div>
+      <div class="tlist">
+        <div class="titem on"><div class="ticon" style="background:#EE4D2D">🏆</div><div><h3>Shopee Mall & chính hãng</h3><p>Hỗ trợ đăng ký Shopee Mall, xây dựng gian hàng chính hãng đạt chuẩn, tăng uy tín thương hiệu trên sàn.</p></div></div>
+        <div class="titem"><div class="ticon" style="background:#EE4D2D">📊</div><div><h3>Shopee Ads & SEO sản phẩm</h3><p>Tối ưu từ khóa, chạy Shopee Ads theo ngành hàng, leo top tìm kiếm và tăng lượt hiển thị tự nhiên.</p></div></div>
+        <div class="titem"><div class="ticon" style="background:#EE4D2D">🎁</div><div><h3>Flash Sale & Mega Sale</h3><p>Lên kế hoạch chiến dịch khuyến mãi theo mùa, tối đa hóa doanh thu trong các đợt sale lớn.</p></div></div>
+      </div>
+    </div>
+
+    <!-- Facebook -->
+    <div class="tpanel" id="tp-fb">
+      <div class="tvisual" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">
+        <div class="tscreen">
+          <div class="sbar"><div class="sd" style="background:#FF5F57"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#28CA41"></div></div>
+          <div class="sbody">
+            <div class="srow" style="background:#1877F2;width:45%;height:12px;border-radius:6px"></div><div style="height:8px"></div>
+            <div class="srow md"></div><div class="srow sh"></div>
+            <div class="sgrid">
+              <div class="scard"><div class="v" style="color:#1877F2">Meta ✓</div><div class="l">Partner</div></div>
+              <div class="scard"><div class="v">6x</div><div class="l">ROAS</div></div>
+              <div class="scard"><div class="v">-40%</div><div class="l">CPL↓</div></div>
+              <div class="scard"><div class="v">24/7</div><div class="l">AI Chat</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fbadge tr"><span>💙</span><div><div style="font-size:13px;font-weight:900;color:#1877F2">Meta Partner</div><div style="font-size:10px;color:#64748B">Chính thức</div></div></div>
+        <div class="fbadge bl"><span>💬</span><div><div style="font-size:14px;font-weight:900;color:#1877F2">98%</div><div style="font-size:10px;color:#64748B">Phản hồi</div></div></div>
+      </div>
+      <div class="tlist">
+        <div class="titem on"><div class="ticon" style="background:#1877F2">📣</div><div><h3>Facebook & Instagram Ads</h3><p>Creative đột phá, target audience chính xác, tối ưu ROAS cho từng ngành hàng cụ thể.</p></div></div>
+        <div class="titem"><div class="ticon" style="background:#1877F2">💬</div><div><h3>Messenger Commerce & AI Chat</h3><p>Tự động chốt đơn qua Messenger, chatbot AI tư vấn và bán hàng 24/7 không cần nhân sự.</p></div></div>
+        <div class="titem"><div class="ticon" style="background:#1877F2">🔄</div><div><h3>Retargeting & Lookalike</h3><p>Chiến lược retargeting chuyên nghiệp, xây lookalike audience để mở rộng quy mô hiệu quả.</p></div></div>
+      </div>
+    </div>
+
+    <!-- Livestream -->
+    <div class="tpanel" id="tp-ls">
+      <div class="tvisual" style="background:linear-gradient(135deg,#FFF1F2,#FECDD3)">
+        <div class="tscreen">
+          <div class="sbar" style="background:#FF3B5C"><div style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5)"></div><div style="font-size:11px;font-weight:700;color:#fff;margin-left:4px">🔴 LIVE</div></div>
+          <div class="sbody">
+            <div class="srow sh"></div><div class="srow md"></div>
+            <div class="sgrid">
+              <div class="scard"><div class="v" style="color:#FF3B5C">🔴</div><div class="l">Đang phát</div></div>
+              <div class="scard"><div class="v">1.2K</div><div class="l">Đơn/live</div></div>
+              <div class="scard"><div class="v">+800%</div><div class="l">Revenue</div></div>
+              <div class="scard"><div class="v">Auto</div><div class="l">Chốt đơn</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fbadge tr"><span>🔴</span><div><div style="font-size:13px;font-weight:900;color:#FF3B5C">Đang Live</div><div style="font-size:10px;color:#64748B">4,230 người xem</div></div></div>
+        <div class="fbadge bl"><span>🛒</span><div><div style="font-size:14px;font-weight:900;color:#FF3B5C">256</div><div style="font-size:10px;color:#64748B">Đơn vừa chốt</div></div></div>
+      </div>
+      <div class="tlist">
+        <div class="titem on"><div class="ticon" style="background:#FF3B5C">🎬</div><div><h3>Vận hành Livestream trọn gói</h3><p>Cung cấp host, setup studio, kịch bản bán hàng, vận hành phiên live từ A-Z chuyên nghiệp.</p></div></div>
+        <div class="titem"><div class="ticon" style="background:#FF3B5C">🤖</div><div><h3>Tự động chốt đơn từ bình luận</h3><p>Khách bình luận từ khoá, hệ thống tự tạo đơn và gửi giỏ hàng vào Messenger để chốt nhanh.</p></div></div>
+        <div class="titem"><div class="ticon" style="background:#FF3B5C">📦</div><div><h3>Quản lý tồn kho real-time</h3><p>Cập nhật liên tục số lượng sản phẩm trong suốt phiên live, kiểm soát overselling hiệu quả.</p></div></div>
+      </div>
+    </div>
+
+    <!-- Ads -->
+    <div class="tpanel" id="tp-ads">
+      <div class="tvisual">
+        <div class="tscreen">
+          <div class="sbar"><div class="sd" style="background:#FF5F57"></div><div class="sd" style="background:#FFBD2E"></div><div class="sd" style="background:#28CA41"></div></div>
+          <div class="sbody">
+            <div class="srow b" style="width:55%"></div><div style="height:8px"></div>
+            <div class="srow md"></div><div class="srow sh"></div>
+            <div class="sgrid">
+              <div class="scard"><div class="v">5.2x</div><div class="l">ROAS avg</div></div>
+              <div class="scard"><div class="v">120+</div><div class="l">Markets</div></div>
+              <div class="scard"><div class="v">-35%</div><div class="l">CPA↓</div></div>
+              <div class="scard"><div class="v">Auto</div><div class="l">Optimize</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="fbadge tr"><span class="fi">📈</span><div><div style="font-size:14px;font-weight:900;color:var(--blue)">ROAS 5.2x</div><div style="font-size:10px;color:#64748B">Trung bình</div></div></div>
+        <div class="fbadge bl"><span class="fi">⚡</span><div><div style="font-size:13px;font-weight:900;color:#10B981">-35% CPA</div><div style="font-size:10px;color:#64748B">Tối ưu liên tục</div></div></div>
+      </div>
+      <div class="tlist">
+        <div class="titem on"><div class="ticon">🎯</div><div><h3>Performance Marketing đa nền tảng</h3><p>Quản lý ngân sách quảng cáo tổng thể trên TikTok Ads, Meta Ads, Google PMax trong một dashboard.</p></div></div>
+        <div class="titem"><div class="ticon">📊</div><div><h3>Analytics & báo cáo ROI</h3><p>Dashboard real-time theo dõi CPL, ROAS, GMV theo từng kênh với insight hành động cụ thể.</p></div></div>
+        <div class="titem"><div class="ticon">🔬</div><div><h3>A/B Testing & scale tự động</h3><p>Test creative, audience, bidding strategy, tự động scale budget cho chiến dịch hiệu quả nhất.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section bg-light" id="services">
+  <div class="container">
+    <div class="eyebrow"><div class="eyebrow-dot"></div>Dịch vụ của chúng tôi</div>
+    <h2 class="stitle">Giải pháp xoay quanh<br>hành trình khách hàng</h2>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-icon" style="background:#EEF5FF">🏪</div><h3>Setup & Vận hành gian hàng</h3><p>Xây dựng gian hàng chính hãng từ đầu trên TikTok Shop, Shopee Mall — setup đúng chuẩn, vận hành chuyên nghiệp 24/7.</p><div class="svc-tags"><span class="stag">TikTok Shop</span><span class="stag">Shopee</span><span class="stag">Lazada</span></div></div>
+      <div class="svc-card"><div class="svc-icon" style="background:#FEF3C7">🎯</div><h3>Performance Ads</h3><p>Chạy quảng cáo chuyển đổi cao trên TikTok, Meta, Shopee với phương pháp thực chiến — cam kết KPI trong hợp đồng.</p><div class="svc-tags"><span class="stag">TikTok Ads</span><span class="stag">Meta Ads</span><span class="stag">Google</span></div></div>
+      <div class="svc-card"><div class="svc-icon" style="background:#DCFCE7">📹</div><h3>Content & Video Production</h3><p>Sản xuất video ngắn, creative quảng cáo bắt trend, hình ảnh sản phẩm chuẩn thương hiệu cho mọi nền tảng.</p><div class="svc-tags"><span class="stag">Short Video</span><span class="stag">Creative Ads</span><span class="stag">KOC</span></div></div>
+      <div class="svc-card"><div class="svc-icon" style="background:#FCE7F3">📡</div><h3>Livestream Commerce</h3><p>Vận hành phiên live trọn gói — host, kịch bản, studio, tự động chốt đơn và quản lý tồn kho real-time.</p><div class="svc-tags"><span class="stag">TikTok Live</span><span class="stag">FB Live</span><span class="stag">Shopee Live</span></div></div>
+      <div class="svc-card"><div class="svc-icon" style="background:#EDE9FE">🤝</div><h3>KOL / KOC Booking</h3><p>Kết nối mạng lưới 10,000+ KOL/KOC trên TikTok, Facebook, Instagram — booking đúng tệp, đúng ngân sách.</p><div class="svc-tags"><span class="stag">KOL</span><span class="stag">KOC</span><span class="stag">MCN</span></div></div>
+      <div class="svc-card"><div class="svc-icon" style="background:#FEF2F2">📊</div><h3>Analytics & Báo cáo</h3><p>Dashboard tổng hợp dữ liệu đa kênh real-time, báo cáo GMV, ROAS, CPL theo tuần/tháng minh bạch.</p><div class="svc-tags"><span class="stag">Dashboard</span><span class="stag">Báo cáo</span><span class="stag">KPI</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CRM CHAT SECTION -->
+<section class="section bg-white">
+  <div class="crm-grid">
+    <div class="crm-visual reveal">
+      <div class="cphone">
+        <div class="ph-header">
+          <div class="ph-ava">🤖</div>
+          <div><div class="ph-name">AI Agent · GrowAgency</div><div class="ph-status">● Đang hoạt động</div></div>
+        </div>
+        <div class="chat-msgs">
+          <div class="cmsg bot">Xin chào! Bạn muốn tìm hiểu gói dịch vụ nào? 🛒</div>
+          <div class="cmsg usr">Tôi muốn vận hành TikTok Shop</div>
+          <div class="cmsg bot">Tuyệt vời! Chúng tôi là Top 10 TikTok Shop Partner. Doanh nghiệp bạn đang bán ngành hàng gì ạ? ✨</div>
+          <div class="cmsg usr">Mỹ phẩm và skincare</div>
+        </div>
+        <div class="chat-action">→ Xem gói dịch vụ phù hợp nhất</div>
+      </div>
+      <div class="crmfloat f1"><span style="font-size:20px">💬</span><div><div class="fv">98%</div><div class="fl">Phản hồi trong 1 phút</div></div></div>
+      <div class="crmfloat f2"><span style="font-size:20px">🤖</span><div><div class="fv">24/7</div><div class="fl">AI Chat hoạt động</div></div></div>
+      <div class="crmfloat f3"><span style="font-size:20px">⚡</span><div><div class="fv">2s</div><div class="fl">Tốc độ phản hồi</div></div></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Tự động hóa bán hàng</div>
+      <h2 class="stitle">Chăm sóc khách hàng<br>tự động 24/7</h2>
+      <p class="sdesc">AI Agent tư vấn như nhân viên thật, xử lý hàng ngàn hội thoại chỉ trong vài phút, chốt đơn thông minh theo ngữ cảnh.</p>
+      <div class="feat-list">
+        <div class="feat-row"><div class="feat-chk">✓</div><div><h4>AI Chat tư vấn sản phẩm</h4><p>Tự động trả lời câu hỏi, gợi ý sản phẩm phù hợp và tạo đơn hàng không cần nhân viên.</p></div></div>
+        <div class="feat-row"><div class="feat-chk">✓</div><div><h4>Quản lý hội thoại đa kênh</h4><p>Tập trung TikTok, Facebook, Shopee Chat, Zalo OA về một hệ thống quản lý duy nhất.</p></div></div>
+        <div class="feat-row"><div class="feat-chk">✓</div><div><h4>Broadcast & remarketing</h4><p>Gửi tin nhắn hàng loạt qua Zalo, Messenger, Email — cá nhân hóa cho từng nhóm khách.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATIONS -->
+<section class="section bg-white">
+  <div class="ops-item reveal">
+    <div class="ops-vis">
+      <div class="ops-screen">
+        <div class="ops-sh"><div class="ops-st">Quản lý đơn hàng đa kênh</div><div class="ops-sb">Real-time</div></div>
+        <div class="ops-tr hd"><span>Đơn hàng</span><span>Kênh</span><span>Trạng thái</span><span>Giá trị</span></div>
+        <div class="ops-tr"><span>#TT-8821</span><span>🎵 TikTok</span><span><div class="ops-stat g">Đã giao</div></span><span style="font-weight:700">350K</span></div>
+        <div class="ops-tr"><span>#SP-4432</span><span>🛒 Shopee</span><span><div class="ops-stat y">Đang giao</div></span><span style="font-weight:700">180K</span></div>
+        <div class="ops-tr"><span>#FB-2219</span><span>📘 Facebook</span><span><div class="ops-stat b">Chờ lấy</div></span><span style="font-weight:700">620K</span></div>
+        <div class="ops-tr"><span>#TT-8820</span><span>🎵 TikTok</span><span><div class="ops-stat g">Đã giao</div></span><span style="font-weight:700">290K</span></div>
+      </div>
+    </div>
+    <div class="ops-txt">
+      <div class="otag">📦 Quản lý vận hành</div>
+      <h2>Xử lý đơn hàng thông minh<br>từ mọi kênh</h2>
+      <p>Đồng bộ đơn hàng từ TikTok Shop, Shopee, Facebook về một hệ thống — xử lý nhanh, giao đúng hẹn, không bỏ sót đơn.</p>
+      <div class="ops-links">
+        <a href="#" class="olink"><span class="arr">→</span> Đồng bộ 15+ nhà vận chuyển</a>
+        <a href="#" class="olink"><span class="arr">→</span> Gộp đơn & giao hàng hàng loạt</a>
+        <a href="#" class="olink"><span class="arr">→</span> Báo cáo đơn theo kênh real-time</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ops-item rev reveal">
+    <div class="ops-vis" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7)">
+      <div class="ops-screen">
+        <div class="ops-sh"><div class="ops-st">Hiệu suất quảng cáo</div><div class="ops-sb" style="background:#DCFCE7;color:#16A34A">↑ +42%</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:4px">
+          <div class="scard" style="background:#DCFCE7"><div class="v" style="color:#16A34A">5.2x</div><div class="l">ROAS</div></div>
+          <div class="scard"><div class="v">₫2.4M</div><div class="l">Revenue</div></div>
+          <div class="scard" style="background:#FEF9C3"><div class="v" style="color:#CA8A04">-35%</div><div class="l">CPA</div></div>
+        </div>
+        <div style="margin-top:14px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748B;margin-bottom:6px"><span>Ngân sách đã dùng</span><span style="font-weight:700;color:var(--blue)">₫18.5M / 24M</span></div>
+          <div style="height:8px;background:#E2E8F0;border-radius:4px;overflow:hidden"><div style="height:100%;width:77%;background:var(--blue);border-radius:4px"></div></div>
+        </div>
+        <div class="srow md" style="margin-top:12px"></div><div class="srow sh"></div>
+      </div>
+    </div>
+    <div class="ops-txt">
+      <div class="otag">🎯 Performance</div>
+      <h2>Tối ưu quảng cáo<br>đo được kết quả</h2>
+      <p>Dashboard tổng hợp dữ liệu từ TikTok Ads, Meta Ads, Shopee Ads — theo dõi ROAS, CPL, GMV theo từng kênh, từng chiến dịch.</p>
+      <div class="ops-links">
+        <a href="#" class="olink"><span class="arr">→</span> Báo cáo KPI hàng tuần</a>
+        <a href="#" class="olink"><span class="arr">→</span> A/B testing tự động</a>
+        <a href="#" class="olink"><span class="arr">→</span> Scale budget thông minh</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section bg-light">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Quy trình làm việc</div>
+      <h2 class="stitle">4 bước để bắt đầu tăng trưởng</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-n">01</div><h3>Tư vấn & phân tích</h3><p>Gặp 1:1, phân tích hiện trạng và xác định mục tiêu tăng trưởng cho từng kênh cụ thể.</p></div>
+      <div class="step"><div class="step-n">02</div><h3>Lên chiến lược</h3><p>Xây dựng roadmap chi tiết với KPI rõ ràng, timeline triển khai và ngân sách tối ưu.</p></div>
+      <div class="step"><div class="step-n">03</div><h3>Triển khai & vận hành</h3><p>Setup gian hàng, chạy campaign, sản xuất content và vận hành 24/7 bởi đội chuyên nghiệp.</p></div>
+      <div class="step"><div class="step-n">04</div><h3>Tối ưu & Scale</h3><p>Phân tích dữ liệu hàng tuần, tối ưu liên tục và scale cho chiến dịch hiệu quả nhất.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos">
+  <div class="logos-lbl">Hơn 2,500+ doanh nghiệp đã tin dùng</div>
+  <div class="mfade">
+    <div class="mtrack">
+      <div class="lchip">🛍 Thegioididong</div><div class="lchip">💄 Hasaki Beauty</div>
+      <div class="lchip">👟 Biti's Hunter</div><div class="lchip">🍜 Mì Hảo Hảo</div>
+      <div class="lchip">📱 Samsung VN</div><div class="lchip">☕ Highlands Coffee</div>
+      <div class="lchip">🏠 Điện Máy Xanh</div><div class="lchip">💊 Pharmacity</div>
+      <div class="lchip">🎮 VNG Corporation</div><div class="lchip">🧴 L'Oreal Vietnam</div>
+      <div class="lchip">👜 Maison Retail</div><div class="lchip">🍔 Jollibee Vietnam</div>
+      <!-- duplicate for loop -->
+      <div class="lchip">🛍 Thegioididong</div><div class="lchip">💄 Hasaki Beauty</div>
+      <div class="lchip">👟 Biti's Hunter</div><div class="lchip">🍜 Mì Hảo Hảo</div>
+      <div class="lchip">📱 Samsung VN</div><div class="lchip">☕ Highlands Coffee</div>
+      <div class="lchip">🏠 Điện Máy Xanh</div><div class="lchip">💊 Pharmacity</div>
+      <div class="lchip">🎮 VNG Corporation</div><div class="lchip">🧴 L'Oreal Vietnam</div>
+      <div class="lchip">👜 Maison Retail</div><div class="lchip">🍔 Jollibee Vietnam</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section bg-light">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Khách hàng nói gì</div>
+      <h2 class="stitle">Kết quả thực tế, không phóng đại</h2>
+    </div>
+    <div class="tgrid">
+      <div class="tcard"><div class="tstars">★★★★★</div><p class="ttxt">"Sau 3 tháng hợp tác, doanh thu TikTok Shop tăng 800%. Team rất chuyên nghiệp, báo cáo minh bạch và luôn đạt KPI đã cam kết trong hợp đồng."</p><div class="tauthor"><div class="tava" style="background:linear-gradient(135deg,#1B6DEA,#0A2240)">T</div><div><div class="tname">Trần Minh Khoa</div><div class="trole">CEO · Tobosi Gia Dụng</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p class="ttxt">"GMV Shopee tăng gấp 10 lần sau 6 tháng. Chi phí vận hành giảm từ 40% xuống 25% nhờ hệ thống tự động hóa mà agency triển khai cho chúng tôi."</p><div class="tauthor"><div class="tava" style="background:linear-gradient(135deg,#EE4D2D,#FF6B35)">N</div><div><div class="tname">Nguyễn Thu Hà</div><div class="trole">Marketing Director · Cozy Vietnam</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><p class="ttxt">"Facebook Ads đạt ROAS 6x — cao nhất từ trước đến nay. Team creative hiểu rõ insight, luôn test và tối ưu không ngừng để đạt kết quả tốt nhất."</p><div class="tauthor"><div class="tava" style="background:linear-gradient(135deg,#10B981,#059669)">L</div><div><div class="tname">Lê Thanh Bình</div><div class="trole">Owner · Skincare House</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section bg-white" id="pricing">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="eyebrow"><div class="eyebrow-dot"></div>Bảng giá</div>
+      <h2 class="stitle">Chọn gói phù hợp<br>với doanh nghiệp bạn</h2>
+    </div>
+    <div class="pgrid reveal">
+      <div class="pcard">
+        <div class="ptier r">Starter</div>
+        <div class="pamt">9<span>triệu</span></div>
+        <div class="pper r">/tháng · 1 kênh</div>
+        <div class="pdiv"></div>
+        <ul class="pfeat">
+          <li><div class="pchk">✓</div>Setup gian hàng 1 sàn</li>
+          <li><div class="pchk">✓</div>Vận hành cơ bản</li>
+          <li><div class="pchk">✓</div>Báo cáo hàng tuần</li>
+          <li><div class="pchk">✓</div>Hỗ trợ giờ hành chính</li>
+        </ul>
+        <a href="#" class="pbtn out">Bắt đầu →</a>
+      </div>
+      <div class="pcard feat">
+        <div class="ptag">Phổ biến nhất</div>
+        <div class="ptier f">Growth</div>
+        <div class="pamt">29<span>triệu</span></div>
+        <div class="pper f">/tháng · 3 kênh</div>
+        <div class="pdiv f"></div>
+        <ul class="pfeat">
+          <li><div class="pchk">✓</div>TikTok + Shopee + Facebook</li>
+          <li><div class="pchk">✓</div>Vận hành + Performance Ads</li>
+          <li><div class="pchk">✓</div>Content 8 video/tháng</li>
+          <li><div class="pchk">✓</div>Livestream 4 phiên/tháng</li>
+          <li><div class="pchk">✓</div>KOC booking 5 người</li>
+          <li><div class="pchk">✓</div>Hỗ trợ 24/7</li>
+        </ul>
+        <a href="#" class="pbtn sol">Bắt đầu miễn phí →</a>
+      </div>
+      <div class="pcard">
+        <div class="ptier r">Enterprise</div>
+        <div class="pamt" style="font-size:28px;padding:8px 0">Liên hệ</div>
+        <div class="pper r">Tuỳ chỉnh theo nhu cầu</div>
+        <div class="pdiv"></div>
+        <ul class="pfeat">
+          <li><div class="pchk">✓</div>Tất cả kênh không giới hạn</li>
+          <li><div class="pchk">✓</div>Dedicated team riêng</li>
+          <li><div class="pchk">✓</div>Content không giới hạn</li>
+          <li><div class="pchk">✓</div>Livestream daily</li>
+          <li><div class="pchk">✓</div>Account Manager riêng</li>
+          <li><div class="pchk">✓</div>SLA cam kết hợp đồng</li>
+        </ul>
+        <a href="#" class="pbtn out">Tư vấn ngay →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-bot">
+  <div class="container">
+    <h2>Dễ bắt đầu · Dễ bán hàng<br>Dễ tăng trưởng</h2>
+    <p>Trải nghiệm toàn bộ dịch vụ miễn phí 14 ngày. Không cần thẻ tín dụng.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-cw">🚀 Bắt đầu miễn phí ngay</a>
+      <a href="#" class="btn-co">📞 Tư vấn 1:1</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fgrid">
+    <div class="fbrand">
+      <div class="fname">GrowAgency ✦</div>
+      <p>Giải pháp marketing đa kênh toàn diện — TikTok Shop, Shopee, Facebook. Đối tác tăng trưởng của 2,500+ doanh nghiệp Việt.</p>
+      <div class="fsocs">
+        <div class="fsoc">🎵</div><div class="fsoc">📘</div>
+        <div class="fsoc">📸</div><div class="fsoc">▶</div><div class="fsoc">💼</div>
+      </div>
+    </div>
+    <div class="fcol">
+      <h5>Giải pháp</h5>
+      <a href="#">TikTok Shop</a><a href="#">Shopee Enabler</a>
+      <a href="#">Facebook Commerce</a><a href="#">Livestream</a>
+      <a href="#">Performance Ads</a><a href="#">KOL/KOC Booking</a>
+    </div>
+    <div class="fcol">
+      <h5>Công ty</h5>
+      <a href="#">Về chúng tôi</a><a href="#">Case Study</a>
+      <a href="#">Blog & Insights</a><a href="#">Tuyển dụng</a><a href="#">Liên hệ</a>
+    </div>
+    <div class="fcol">
+      <h5>Hỗ trợ</h5>
+      <a href="#">Tài liệu hướng dẫn</a><a href="#">FAQ</a>
+      <a href="#">Bảng giá</a><a href="#">Chính sách bảo mật</a>
+      <a href="#">📞 0708 789 886</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2025 GrowAgency. Tất cả quyền được bảo lưu.</span>
+    <span style="display:flex;gap:20px">
+      <a href="#" style="color:inherit;text-decoration:none">Chính sách bảo mật</a>
+      <a href="#" style="color:inherit;text-decoration:none">Điều khoản dịch vụ</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+// Navbar
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+
+// Feature tabs
+document.querySelectorAll('.tbtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tbtn').forEach(b => b.classList.remove('on'));
+    document.querySelectorAll('.tpanel').forEach(p => p.classList.remove('on'));
+    btn.classList.add('on');
+    document.getElementById('tp-' + btn.dataset.tab).classList.add('on');
+  });
+});
+
+// Feature item click
+document.querySelectorAll('.titem').forEach(item => {
+  item.addEventListener('click', () => {
+    item.closest('.tlist').querySelectorAll('.titem').forEach(i => i.classList.remove('on'));
+    item.classList.add('on');
+  });
+});
+
+// IntersectionObserver
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add('in');
+    if (e.target.classList.contains('sc')) animateStat(e.target);
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.sc, .svc-card, .step, .tcard, .reveal').forEach(el => io.observe(el));
+
+// Count-up
+function animateStat(el) {
+  const span = el.querySelector('.sv');
+  if (!span || span.dataset.done) return;
+  span.dataset.done = '1';
+  const target = +span.dataset.t;
+  const suffix = span.dataset.s || '';
+  const dur = 1400, start = performance.now();
+  const tick = now => {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    const val = target < 20 ? (ease * target).toFixed(1).replace('.0','') : Math.round(ease * target);
+    span.textContent = val + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+</script>
+</body>
+</html>

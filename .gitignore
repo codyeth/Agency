@@ -1,0 +1,24 @@
+.superpowers/
+.claude/
+
+# Node
+node_modules/
+.npm
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
