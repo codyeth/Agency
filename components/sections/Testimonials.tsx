@@ -5,7 +5,7 @@ import { TESTIMONIALS } from '@/lib/data'
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-12" style={{ background: '#EEF5FF' }}>
+    <section className="py-28 px-12" style={{ background: '#EEF5FF' }}>
       <div className="max-w-[1160px] mx-auto">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]

@@ -5,7 +5,7 @@ import { SERVICES } from '@/lib/data'
 
 export default function ServicesGrid() {
   return (
-    <section className="py-24 px-12" style={{ background: '#EEF5FF' }}>
+    <section className="py-28 px-12" style={{ background: '#EEF5FF' }}>
       <div className="max-w-[1160px] mx-auto">
         <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]
           px-3.5 py-1.5 rounded-full mb-3.5"

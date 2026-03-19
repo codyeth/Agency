@@ -40,7 +40,7 @@ export default function FeatureTabs() {
   const current = FEATURE_TABS.find((t) => t.id === activeTab)!
 
   return (
-    <section className="py-24 px-12 bg-white" id="services">
+    <section className="py-28 px-12 bg-white" id="services">
       <div className="max-w-[1160px] mx-auto">
         {/* Header */}
         <div className="text-center mb-11">
@@ -94,8 +94,8 @@ export default function FeatureTabs() {
             className="grid grid-cols-2 gap-14 items-center"
           >
             {/* Visual */}
-            <div className="relative aspect-square rounded-3xl overflow-visible flex items-center"
-              style={{ background: 'linear-gradient(135deg, #EEF5FF, #DBEAFE)' }}>
+            <div className="relative rounded-3xl overflow-visible flex items-center justify-center py-10"
+              style={{ background: 'linear-gradient(135deg, #EEF5FF, #DBEAFE)', minHeight: 420 }}>
               <UIMetricsMockup metrics={current.metrics} />
               {current.badges.map((b, i) => (
                 <FloatingBadge key={i} {...b} delay={i * 0.4} />

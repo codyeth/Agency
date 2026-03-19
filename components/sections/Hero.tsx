@@ -24,8 +24,8 @@ export default function Hero() {
   return (
     <>
       <section
-        className="min-h-[580px] relative overflow-hidden flex flex-col items-center
-          px-12 pt-[100px] pb-0 text-center"
+        className="min-h-[680px] relative overflow-hidden flex flex-col items-center
+          px-12 pt-[120px] pb-0 text-center"
         style={{ background: 'linear-gradient(160deg, #1B6DEA 0%, #0c3d8e 55%, #071e3d 100%)' }}
       >
         {/* Orbs */}
@@ -68,12 +68,11 @@ export default function Hero() {
         {/* H1 */}
         <motion.h1
           variants={fadeUp} initial="hidden" animate="show" transition={{ delay: 0.1 }}
-          className="relative z-10 font-black leading-[1.12] text-white tracking-[-0.03em] mb-5 max-w-[760px]"
-          style={{ fontSize: 'clamp(34px, 4.5vw, 60px)' }}
+          className="relative z-10 font-black leading-[1.08] text-white tracking-[-0.03em] mb-5"
+          style={{ fontSize: 'clamp(40px, 5.5vw, 70px)' }}
         >
           Kết Nối KOC Đúng Ngách
           <br />
-          Đúng Brand.{' '}
           <span className="relative inline-block" style={{ color: '#FCD34D' }}>
             Đúng Kết Quả.
             <motion.span
