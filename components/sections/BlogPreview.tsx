@@ -30,7 +30,7 @@ export default function BlogPreview() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           {BLOG_POSTS.map((post, i) => (
             <motion.a

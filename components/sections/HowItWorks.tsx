@@ -25,7 +25,7 @@ export default function HowItWorks() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           {/* Connecting line */}
           <div className="absolute top-10 left-[calc(12.5%+8px)] right-[calc(12.5%+8px)] h-0.5

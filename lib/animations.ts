@@ -32,4 +32,4 @@ export const scaleIn: Variants = {
   show: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 }
 
-export const viewport: Pick<UseInViewOptions, 'once' | 'margin'> = { once: true, margin: '-80px' }
+export const viewport: Pick<UseInViewOptions, 'once' | 'amount'> = { once: true, amount: 0.05 }

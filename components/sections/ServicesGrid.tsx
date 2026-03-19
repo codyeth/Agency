@@ -23,7 +23,7 @@ export default function ServicesGrid() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           {SERVICES.map((svc, i) => (
             <motion.div

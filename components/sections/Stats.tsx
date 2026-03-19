@@ -12,7 +12,7 @@ export default function Stats() {
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, margin: '-50px' }}
+        viewport={{ once: true, amount: 0.05 }}
       >
         {STATS.map((stat, i) => (
           <motion.div

@@ -13,14 +13,14 @@ export default function CTABanner() {
 
       <div className="relative z-10 max-w-[1280px] mx-auto">
         <motion.h2
-          variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+          variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.05 }}
           className="font-medium text-white leading-[1.2] mb-4"
           style={{ fontSize: '48px' }}
         >
           Bắt đầu campaign KOC<br />đầu tiên của bạn hôm nay
         </motion.h2>
         <motion.p
-          variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+          variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.05 }}
           transition={{ delay: 0.1 }}
           className="text-base font-normal mb-10"
           style={{ color: 'rgba(255,255,255,0.70)' }}
@@ -28,7 +28,7 @@ export default function CTABanner() {
           Tư vấn miễn phí · Shortlist KOC trong 48h · KPI cam kết trong hợp đồng
         </motion.p>
         <motion.div
-          variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+          variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.05 }}
           transition={{ delay: 0.2 }}
           className="flex gap-4 justify-center"
         >

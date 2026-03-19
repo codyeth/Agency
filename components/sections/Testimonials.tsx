@@ -24,7 +24,7 @@ export default function Testimonials() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, amount: 0.05 }}
         >
           {TESTIMONIALS.map((t, i) => (
             <motion.div
