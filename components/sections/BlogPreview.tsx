@@ -5,28 +5,28 @@ import { BLOG_POSTS } from '@/lib/data'
 
 export default function BlogPreview() {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
-      <div className="max-w-[1080px] mx-auto">
+    <section className="pt-[80px] pb-[125px] px-10 bg-white">
+      <div className="max-w-[1280px] mx-auto">
         <div className="flex items-end justify-between mb-14">
           <div>
-            <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]
-              px-3.5 py-1.5 rounded-full mb-3.5"
-              style={{ background: '#DBEAFE', color: '#1B6DEA' }}>
-              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#1B6DEA' }} />
+            <div className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em]
+              px-3.5 py-1.5 rounded-[64px] mb-3.5"
+              style={{ background: '#E1F3FE', color: '#2463EB' }}>
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#2463EB' }} />
               Kiến thức ngành
             </div>
-            <h2 className="font-black leading-[1.12] tracking-[-0.02em]"
-              style={{ fontSize: 'clamp(28px, 3.5vw, 46px)' }}>
+            <h2 className="font-medium leading-[1.2]"
+              style={{ fontSize: '48px', color: '#111827' }}>
               Blog &amp; Cẩm nang
             </h2>
           </div>
-          <a href="/blog" className="text-[14px] font-semibold hover:underline"
-            style={{ color: '#1B6DEA' }}>
+          <a href="/blog" className="text-[14px] font-normal hover:underline"
+            style={{ color: '#2463EB' }}>
             Xem tất cả →
           </a>
         </div>
         <motion.div
-          className="grid grid-cols-3 gap-5"
+          className="grid grid-cols-3 gap-6"
           variants={staggerContainer}
           initial="hidden"
           whileInView="show"
@@ -37,23 +37,23 @@ export default function BlogPreview() {
               key={i}
               href="/blog"
               variants={staggerItem}
-              className="rounded-3xl p-6 group block"
-              style={{ background: '#EEF5FF', textDecoration: 'none' }}
-              whileHover={{ y: -4, boxShadow: '0 16px 40px rgba(27,109,234,0.10)' }}
+              className="rounded-[16px] p-8 group block"
+              style={{ background: '#F9FAFB', textDecoration: 'none' }}
+              whileHover={{ y: -4, boxShadow: '0 16px 40px rgba(36,99,235,0.10)' }}
             >
-              <span className="inline-block text-[11px] font-black px-2.5 py-1 rounded-full mb-4"
-                style={{ background: '#DBEAFE', color: '#1B6DEA' }}>
+              <span className="inline-block text-[12px] font-semibold uppercase tracking-[0.08em] px-2.5 py-1 rounded-[64px] mb-4"
+                style={{ background: '#E1F3FE', color: '#2463EB' }}>
                 {post.tag}
               </span>
-              <h3 className="text-[16px] font-black text-slate-900 leading-[1.4] mb-2.5 transition-colors"
-                style={{ color: '#0F172A' }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#1B6DEA')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#0F172A')}
+              <h3 className="text-[18px] font-semibold leading-[1.3] mb-2.5 transition-colors"
+                style={{ color: '#111827' }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#2463EB')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#111827')}
               >
                 {post.title}
               </h3>
-              <p className="text-[13px] leading-[1.65] mb-4" style={{ color: '#64748B' }}>{post.desc}</p>
-              <div className="flex items-center gap-3 text-[12px]" style={{ color: '#64748B' }}>
+              <p className="text-base font-normal leading-[1.3] mb-4" style={{ color: '#4B5563' }}>{post.desc}</p>
+              <div className="flex items-center gap-3 text-[14px] font-normal" style={{ color: '#4B5563' }}>
                 <span>{post.date}</span>
                 <span>·</span>
                 <span>{post.readTime} đọc</span>

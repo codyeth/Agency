@@ -5,8 +5,8 @@ import { LOGOS } from '@/lib/data'
 export default function LogoMarquee() {
   return (
     <section className="py-14 bg-white overflow-hidden">
-      <p className="text-center text-[13px] font-bold uppercase tracking-[1px] mb-8"
-        style={{ color: '#64748B' }}>
+      <p className="text-center text-[12px] font-semibold uppercase tracking-[0.08em] mb-8"
+        style={{ color: '#4B5563' }}>
         Nhãn hàng đã tin dùng
       </p>
       <div className="relative">
@@ -21,10 +21,10 @@ export default function LogoMarquee() {
         >
           {[...LOGOS, ...LOGOS].map((logo, i) => (
             <div key={i}
-              className="px-9 py-4 text-[14px] font-bold border-r border-slate-100 whitespace-nowrap
+              className="px-9 py-4 text-[14px] font-normal border-r border-slate-100 whitespace-nowrap
                 transition-colors cursor-default"
               style={{ color: '#94A3B8' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#1B6DEA')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#2463EB')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#94A3B8')}
             >
               {logo}

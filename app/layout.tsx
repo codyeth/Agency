@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
-import { Be_Vietnam_Pro } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import SmoothScroll from '@/components/layout/SmoothScroll'
 
-const beVietnamPro = Be_Vietnam_Pro({
+const inter = Inter({
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-be',
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi" className={beVietnamPro.variable} suppressHydrationWarning>
+    <html lang="vi" className={inter.variable}>
       <body>
         <SmoothScroll>
           {children}

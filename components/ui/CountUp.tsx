@@ -23,9 +23,9 @@ export default function CountUp({ target, suffix = '', duration = 1400 }: CountU
 
   return (
     <div ref={ref} className="flex items-baseline justify-center gap-0.5">
-      <motion.span className="text-[44px] font-black leading-none"
-        style={{ color: '#1B6DEA' }}>{rounded}</motion.span>
-      <span className="text-[28px] font-black" style={{ color: '#1B6DEA' }}>{suffix}</span>
+      <motion.span className="text-[44px] font-medium leading-none"
+        style={{ color: '#2463EB' }}>{rounded}</motion.span>
+      <span className="text-[28px] font-medium" style={{ color: '#2463EB' }}>{suffix}</span>
     </div>
   )
 }

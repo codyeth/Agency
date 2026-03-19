@@ -5,17 +5,17 @@ import { STEPS } from '@/lib/data'
 
 export default function HowItWorks() {
   return (
-    <section className="py-28 px-6 md:px-12 lg:px-20" id="process" style={{ background: '#fff' }}>
-      <div className="max-w-[1080px] mx-auto">
+    <section className="pt-[80px] pb-[125px] px-10" id="process" style={{ background: '#fff' }}>
+      <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]
-            px-3.5 py-1.5 rounded-full mb-3.5"
-            style={{ background: '#DBEAFE', color: '#1B6DEA' }}>
-            <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#1B6DEA' }} />
+          <div className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em]
+            px-3.5 py-1.5 rounded-[64px] mb-3.5"
+            style={{ background: '#E1F3FE', color: '#2463EB' }}>
+            <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#2463EB' }} />
             Quy trình làm việc
           </div>
-          <h2 className="font-black leading-[1.12] tracking-[-0.02em]"
-            style={{ fontSize: 'clamp(28px, 3.5vw, 46px)' }}>
+          <h2 className="font-medium leading-[1.2]"
+            style={{ fontSize: '48px', color: '#111827' }}>
             4 bước để có campaign KOC thành công
           </h2>
         </div>
@@ -30,20 +30,20 @@ export default function HowItWorks() {
           {/* Connecting line */}
           <div className="absolute top-10 left-[calc(12.5%+8px)] right-[calc(12.5%+8px)] h-0.5
             rounded-full pointer-events-none"
-            style={{ background: 'linear-gradient(90deg, #1B6DEA, #DBEAFE)' }} />
+            style={{ background: 'linear-gradient(90deg, #2463EB, #E1F3FE)' }} />
 
           {STEPS.map((step, i) => (
             <motion.div key={i} variants={staggerItem} className="text-center relative">
-              <div className="w-20 h-20 rounded-full text-white text-[22px] font-black
+              <div className="w-20 h-20 rounded-full text-white text-[22px] font-medium
                 flex items-center justify-center mx-auto mb-5 relative z-10"
                 style={{
-                  background: '#1B6DEA',
-                  boxShadow: '0 6px 22px rgba(27,109,234,0.38)',
+                  background: '#2463EB',
+                  boxShadow: '0 6px 22px rgba(36,99,235,0.38)',
                 }}>
                 {step.step}
               </div>
-              <h3 className="text-[16px] font-black mb-2.5">{step.title}</h3>
-              <p className="text-[13px] leading-[1.6]" style={{ color: '#64748B' }}>{step.desc}</p>
+              <h3 className="text-[28px] font-medium leading-[1.2] mb-2.5" style={{ color: '#111827' }}>{step.title}</h3>
+              <p className="text-base font-normal leading-[1.3]" style={{ color: '#4B5563' }}>{step.desc}</p>
             </motion.div>
           ))}
         </motion.div>

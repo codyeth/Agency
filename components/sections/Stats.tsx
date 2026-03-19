@@ -6,9 +6,9 @@ import { STATS } from '@/lib/data'
 
 export default function Stats() {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
+    <section className="pt-[80px] pb-[125px] px-10 bg-white">
       <motion.div
-        className="max-w-[1080px] mx-auto grid grid-cols-4 border border-slate-200 rounded-3xl overflow-hidden"
+        className="max-w-[1280px] mx-auto grid grid-cols-4 border border-slate-200 rounded-[16px] overflow-hidden"
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
@@ -21,7 +21,7 @@ export default function Stats() {
             className={`py-10 px-8 text-center ${i < STATS.length - 1 ? 'border-r border-slate-200' : ''}`}
           >
             <CountUp target={stat.value} suffix={stat.suffix} />
-            <p className="text-[13px] font-medium mt-2" style={{ color: '#64748B' }}>{stat.label}</p>
+            <p className="text-[14px] font-normal mt-2" style={{ color: '#4B5563' }}>{stat.label}</p>
           </motion.div>
         ))}
       </motion.div>

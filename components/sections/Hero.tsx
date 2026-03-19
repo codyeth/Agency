@@ -25,8 +25,8 @@ export default function Hero() {
     <>
       <section
         className="min-h-[680px] relative overflow-hidden flex flex-col items-center
-          px-12 pt-[120px] pb-0 text-center"
-        style={{ background: 'linear-gradient(160deg, #1B6DEA 0%, #0c3d8e 55%, #071e3d 100%)' }}
+          px-10 pt-[120px] pb-0 text-center"
+        style={{ background: 'linear-gradient(160deg, #2463EB 0%, #1D4FD7 55%, #0A1F4E 100%)' }}
       >
         {/* Orbs */}
         <div className="absolute w-[600px] h-[600px] rounded-full pointer-events-none -top-[200px] -left-[100px]"
@@ -57,7 +57,7 @@ export default function Hero() {
         <motion.div
           variants={fadeUp} initial="hidden" animate="show"
           className="relative z-10 inline-flex items-center gap-2 mb-6
-            border rounded-full px-4 py-1.5 text-[13px] font-semibold text-white"
+            border rounded-[64px] px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.08em] text-white"
           style={{ background: 'rgba(255,255,255,0.10)', borderColor: 'rgba(255,255,255,0.20)' }}
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"
@@ -68,8 +68,8 @@ export default function Hero() {
         {/* H1 */}
         <motion.h1
           variants={fadeUp} initial="hidden" animate="show" transition={{ delay: 0.1 }}
-          className="relative z-10 font-black leading-[1.08] text-white tracking-[-0.03em] mb-5"
-          style={{ fontSize: 'clamp(40px, 5.5vw, 70px)' }}
+          className="relative z-10 font-medium leading-[1.2] text-white mb-5"
+          style={{ fontSize: '48px' }}
         >
           Kết Nối KOC Đúng Ngách
           <br />
@@ -88,7 +88,7 @@ export default function Hero() {
         {/* Sub */}
         <motion.p
           variants={fadeUp} initial="hidden" animate="show" transition={{ delay: 0.2 }}
-          className="relative z-10 text-[17px] text-white/75 max-w-[520px] leading-[1.7] mb-10"
+          className="relative z-10 text-base font-normal text-white/75 max-w-[520px] leading-[1.3] mb-10"
         >
           {SITE.description}
         </motion.p>
@@ -99,17 +99,17 @@ export default function Hero() {
           className="relative z-10 flex gap-3.5 justify-center mb-16"
         >
           <motion.a href="#contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white
-              font-black text-[15px]"
-            style={{ color: '#1B6DEA', boxShadow: '0 8px 28px rgba(0,0,0,0.18)', textDecoration: 'none' }}
+            className="inline-flex items-center gap-2 h-12 px-7 rounded-[64px] bg-white
+              font-normal text-base"
+            style={{ color: '#2463EB', boxShadow: '0 8px 28px rgba(0,0,0,0.18)', textDecoration: 'none' }}
             whileHover={{ y: -3, boxShadow: '0 14px 36px rgba(0,0,0,0.24)' }}
             whileTap={{ scale: 0.97 }}
           >
             🚀 Brand — Booking KOC
           </motion.a>
           <motion.a href="#koc"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full
-              text-white font-bold text-[15px] border"
+            className="inline-flex items-center gap-2 h-12 px-7 rounded-[64px]
+              text-white font-normal text-base border"
             style={{ background: 'rgba(255,255,255,0.10)', borderColor: 'rgba(255,255,255,0.30)', textDecoration: 'none' }}
             whileHover={{ background: 'rgba(255,255,255,0.2)' }}
           >
@@ -120,7 +120,7 @@ export default function Hero() {
         {/* Promo card */}
         <motion.div
           variants={fadeUp} initial="hidden" animate="show" transition={{ delay: 0.4 }}
-          className="relative z-10 w-full max-w-[680px] rounded-3xl -mb-[52px] grid grid-cols-3 gap-6 px-12 py-8"
+          className="relative z-10 w-full max-w-[680px] rounded-[16px] -mb-[52px] grid grid-cols-3 gap-6 px-12 py-8"
           style={{
             background: 'rgba(255,255,255,0.10)',
             backdropFilter: 'blur(20px)',
@@ -130,12 +130,12 @@ export default function Hero() {
           {PROMO.map((p, i) => (
             <div key={i} className={`text-center ${i < 2 ? 'border-r' : ''}`}
               style={{ borderColor: 'rgba(255,255,255,0.15)' }}>
-              <div className="inline-block text-[10px] font-black uppercase tracking-[1px]
-                text-emerald-300 px-2.5 py-0.5 rounded-full mb-2.5"
+              <div className="inline-block text-[10px] font-semibold uppercase tracking-[0.08em]
+                text-emerald-300 px-2.5 py-0.5 rounded-[64px] mb-2.5"
                 style={{ background: 'rgba(52,211,153,0.20)' }}>
                 {p.badge}
               </div>
-              <div className="text-[36px] font-black text-white leading-none">{p.value}</div>
+              <div className="text-[36px] font-medium text-white leading-none">{p.value}</div>
               <div className="text-[12px] mt-1.5 leading-[1.4] whitespace-pre-line"
                 style={{ color: 'rgba(255,255,255,0.55)' }}>{p.label}</div>
             </div>

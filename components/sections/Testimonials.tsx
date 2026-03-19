@@ -5,17 +5,17 @@ import { TESTIMONIALS } from '@/lib/data'
 
 export default function Testimonials() {
   return (
-    <section className="py-28 px-6 md:px-12 lg:px-20" style={{ background: '#EEF5FF' }}>
-      <div className="max-w-[1080px] mx-auto">
+    <section className="pt-[80px] pb-[125px] px-10" style={{ background: '#F9FAFB' }}>
+      <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-14">
-          <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]
-            px-3.5 py-1.5 rounded-full mb-3.5"
-            style={{ background: '#DBEAFE', color: '#1B6DEA' }}>
-            <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#1B6DEA' }} />
+          <div className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em]
+            px-3.5 py-1.5 rounded-[64px] mb-3.5"
+            style={{ background: '#E1F3FE', color: '#2463EB' }}>
+            <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#2463EB' }} />
             Khách hàng nói gì
           </div>
-          <h2 className="font-black leading-[1.12] tracking-[-0.02em]"
-            style={{ fontSize: 'clamp(28px, 3.5vw, 46px)' }}>
+          <h2 className="font-medium leading-[1.2]"
+            style={{ fontSize: '48px', color: '#111827' }}>
             Kết quả thực tế, không phóng đại
           </h2>
         </div>
@@ -30,20 +30,20 @@ export default function Testimonials() {
             <motion.div
               key={i}
               variants={staggerItem}
-              className="bg-white rounded-3xl p-8 transition-all duration-300"
-              whileHover={{ y: -5, boxShadow: '0 16px 40px rgba(27,109,234,0.12)' }}
+              className="bg-white rounded-[16px] p-8 transition-all duration-300"
+              whileHover={{ y: -5, boxShadow: '0 16px 40px rgba(36,99,235,0.12)' }}
             >
               <div className="text-[15px] tracking-[2px] mb-4" style={{ color: '#F59E0B' }}>★★★★★</div>
-              <p className="text-[14px] leading-[1.75] text-slate-800 mb-5 italic">"{t.quote}"</p>
+              <p className="text-base font-normal leading-[1.3] mb-5 italic" style={{ color: '#111827' }}>"{t.quote}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full text-white font-black text-base
+                <div className="w-10 h-10 rounded-full text-white font-medium text-base
                   flex items-center justify-center flex-shrink-0"
                   style={{ background: t.gradient }}>
                   {t.name[0]}
                 </div>
                 <div>
-                  <div className="text-[14px] font-black">{t.name}</div>
-                  <div className="text-[12px]" style={{ color: '#64748B' }}>{t.role}</div>
+                  <div className="text-[14px] font-semibold" style={{ color: '#111827' }}>{t.name}</div>
+                  <div className="text-[12px] font-normal" style={{ color: '#4B5563' }}>{t.role}</div>
                 </div>
               </div>
             </motion.div>

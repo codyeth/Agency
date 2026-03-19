@@ -5,16 +5,16 @@ import { SERVICES } from '@/lib/data'
 
 export default function ServicesGrid() {
   return (
-    <section className="py-28 px-6 md:px-12 lg:px-20" style={{ background: '#EEF5FF' }}>
-      <div className="max-w-[1080px] mx-auto">
-        <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]
-          px-3.5 py-1.5 rounded-full mb-3.5"
-          style={{ background: '#DBEAFE', color: '#1B6DEA' }}>
-          <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#1B6DEA' }} />
+    <section className="pt-[80px] pb-[125px] px-10" style={{ background: '#F9FAFB' }}>
+      <div className="max-w-[1280px] mx-auto">
+        <div className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em]
+          px-3.5 py-1.5 rounded-[64px] mb-3.5"
+          style={{ background: '#E1F3FE', color: '#2463EB' }}>
+          <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#2463EB' }} />
           Dịch vụ của chúng tôi
         </div>
-        <h2 className="font-black leading-[1.12] tracking-[-0.02em] mb-2"
-          style={{ fontSize: 'clamp(28px, 3.5vw, 46px)' }}>
+        <h2 className="font-medium leading-[1.2] mb-2"
+          style={{ fontSize: '48px', color: '#111827' }}>
           Mọi thứ bạn cần cho KOC campaign
         </h2>
 
@@ -29,26 +29,26 @@ export default function ServicesGrid() {
             <motion.div
               key={i}
               variants={staggerItem}
-              className="bg-white rounded-3xl p-8 border-2 border-transparent cursor-pointer
+              className="bg-white rounded-[16px] p-8 border-2 border-transparent cursor-pointer
                 transition-all duration-300"
-              style={{ boxShadow: '0 2px 12px rgba(27,109,234,0.06)' }}
+              style={{ boxShadow: '0 2px 12px rgba(36,99,235,0.06)' }}
               whileHover={{
-                borderColor: '#1B6DEA',
-                boxShadow: '0 16px 48px rgba(27,109,234,0.18)',
+                borderColor: '#2463EB',
+                boxShadow: '0 16px 48px rgba(36,99,235,0.18)',
                 y: -4,
               }}
             >
-              <div className="w-14 h-14 rounded-xl flex items-center justify-center text-[27px] mb-5"
+              <div className="w-14 h-14 rounded-[16px] flex items-center justify-center text-[27px] mb-5"
                 style={{ background: svc.bg }}>
                 {svc.icon}
               </div>
-              <h3 className="text-[17px] font-black mb-2.5">{svc.title}</h3>
-              <p className="text-[13px] leading-[1.65] mb-5" style={{ color: '#64748B' }}>{svc.desc}</p>
+              <h3 className="text-[28px] font-medium leading-[1.2] mb-2.5" style={{ color: '#111827' }}>{svc.title}</h3>
+              <p className="text-base font-normal leading-[1.3] mb-5" style={{ color: '#4B5563' }}>{svc.desc}</p>
               <div className="flex flex-wrap gap-1.5">
                 {svc.tags.map((tag) => (
                   <span key={tag}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-bold"
-                    style={{ background: '#EEF5FF', color: '#1B6DEA' }}>
+                    className="px-2.5 py-1 rounded-[64px] text-[12px] font-semibold"
+                    style={{ background: '#E1F3FE', color: '#2463EB' }}>
                     {tag}
                   </span>
                 ))}
