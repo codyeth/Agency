@@ -5,8 +5,8 @@ import { SITE } from '@/lib/data'
 
 export default function KOCRegistration() {
   return (
-    <section className="py-24 px-12 bg-white" id="contact">
-      <div className="max-w-[1160px] mx-auto grid grid-cols-2 gap-16 items-center">
+    <section className="py-24 px-6 md:px-12 lg:px-20 bg-white" id="contact">
+      <div className="max-w-[1080px] mx-auto grid grid-cols-2 gap-16 items-center">
         {/* Brand side */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}>
           <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]

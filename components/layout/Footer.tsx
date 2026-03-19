@@ -10,8 +10,8 @@ const FOOTER_LINKS: Record<string, string[]> = {
 
 export default function Footer() {
   return (
-    <footer className="pt-[72px] pb-9 px-12" style={{ background: '#060F1E', color: 'rgba(255,255,255,0.55)' }}>
-      <div className="max-w-[1160px] mx-auto grid mb-14"
+    <footer className="pt-[72px] pb-9 px-6 md:px-12 lg:px-20" style={{ background: '#060F1E', color: 'rgba(255,255,255,0.55)' }}>
+      <div className="max-w-[1080px] mx-auto grid mb-14"
         style={{ gridTemplateColumns: '2.2fr 1fr 1fr 1fr', gap: '56px' }}>
         <div>
           <div className="text-[22px] font-black text-white mb-3.5">{SITE.name} ✦</div>
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
         ))}
       </div>
-      <div className="max-w-[1160px] mx-auto border-t pt-7 flex justify-between items-center text-[12px]"
+      <div className="max-w-[1080px] mx-auto border-t pt-7 flex justify-between items-center text-[12px]"
         style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
         <span>© 2026 {SITE.name}. Tất cả quyền được bảo lưu.</span>
         <div className="flex gap-5">

@@ -5,8 +5,8 @@ import { STEPS } from '@/lib/data'
 
 export default function HowItWorks() {
   return (
-    <section className="py-28 px-12" id="process" style={{ background: '#fff' }}>
-      <div className="max-w-[1160px] mx-auto">
+    <section className="py-28 px-6 md:px-12 lg:px-20" id="process" style={{ background: '#fff' }}>
+      <div className="max-w-[1080px] mx-auto">
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]
             px-3.5 py-1.5 rounded-full mb-3.5"

@@ -4,14 +4,14 @@ import { fadeUp } from '@/lib/animations'
 
 export default function CTABanner() {
   return (
-    <section className="relative overflow-hidden text-center py-24 px-12"
+    <section className="relative overflow-hidden text-center py-24 px-6 md:px-12 lg:px-20"
       style={{ background: 'linear-gradient(155deg, #1B6DEA 0%, #0A2240 100%)' }}>
       <div className="absolute -top-32 -left-20 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: 'rgba(255,255,255,0.04)' }} />
       <div className="absolute -bottom-24 -right-12 w-[400px] h-[400px] rounded-full pointer-events-none"
         style={{ background: 'rgba(255,255,255,0.04)' }} />
 
-      <div className="relative z-10 max-w-[1160px] mx-auto">
+      <div className="relative z-10 max-w-[1080px] mx-auto">
         <motion.h2
           variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
           className="font-black text-white leading-[1.12] tracking-[-0.02em] mb-4"

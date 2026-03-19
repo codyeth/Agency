@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-[200] h-16 px-12 flex items-center justify-between
+      className={`sticky top-0 z-[200] h-16 px-6 md:px-12 lg:px-20 flex items-center justify-between
         bg-white/95 backdrop-blur-xl border-b border-black/[0.06]
         transition-shadow duration-300 ${scrolled ? 'shadow-[0_4px_24px_rgba(0,0,0,0.08)]' : ''}`}
     >

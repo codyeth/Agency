@@ -40,8 +40,8 @@ export default function FeatureTabs() {
   const current = FEATURE_TABS.find((t) => t.id === activeTab)!
 
   return (
-    <section className="py-28 px-12 bg-white" id="services">
-      <div className="max-w-[1160px] mx-auto">
+    <section className="py-28 px-6 md:px-12 lg:px-20 bg-white" id="services">
+      <div className="max-w-[1080px] mx-auto">
         {/* Header */}
         <div className="text-center mb-11">
           <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]

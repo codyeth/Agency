@@ -6,9 +6,9 @@ import { STATS } from '@/lib/data'
 
 export default function Stats() {
   return (
-    <section className="py-24 px-12 bg-white">
+    <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
       <motion.div
-        className="max-w-[1160px] mx-auto grid grid-cols-4 border border-slate-200 rounded-3xl overflow-hidden"
+        className="max-w-[1080px] mx-auto grid grid-cols-4 border border-slate-200 rounded-3xl overflow-hidden"
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"

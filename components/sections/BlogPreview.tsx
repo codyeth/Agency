@@ -5,8 +5,8 @@ import { BLOG_POSTS } from '@/lib/data'
 
 export default function BlogPreview() {
   return (
-    <section className="py-24 px-12 bg-white">
-      <div className="max-w-[1160px] mx-auto">
+    <section className="py-24 px-6 md:px-12 lg:px-20 bg-white">
+      <div className="max-w-[1080px] mx-auto">
         <div className="flex items-end justify-between mb-14">
           <div>
             <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[1.2px]
