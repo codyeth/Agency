@@ -20,11 +20,13 @@ Before making any recommendations, read:
 1. `docs/superpowers/specs/2026-03-15-agency-strategy-design.md` — full strategy, growth hacks, revenue model, KPIs
 2. `docs/guides/tiktok-handbook-2026.md` — TikTok platform guide (also website content)
 
-Research material (read-only): `comme/`, `dreamagency/`, `sefamedia/`, `haravan/`, `hunteragency/` — scraped competitor sites.
+Research material (read-only): `docs/research/` — scraped competitor sites (`comme/`, `dreamagency/`, `sefamedia/`, `haravan/`, `hunteragency/`).
+
+Visual reference: `docs/reference/agency-homepage-v2.html` — HTML prototype for layout/animation ground truth.
 
 ---
 
-## Website (`website/`)
+## Website (Next.js at repo root)
 
 ### Stack
 
@@ -35,7 +37,7 @@ Research material (read-only): `comme/`, `dreamagency/`, `sefamedia/`, `haravan/
 - **GSAP** installed but reserved for bubble diagram (not yet used)
 - Vietnamese language only — all copy is in Vietnamese
 
-### Commands (run from `website/`)
+### Commands (run from repo root)
 
 ```bash
 npm run dev      # dev server on localhost:3000
@@ -91,4 +93,4 @@ Component layout:
 
 ### Visual Reference
 
-`agency-homepage-v2.html` — pure HTML/CSS prototype at repo root. Use this as the ground truth for layout, animation behavior, and visual style when building or debugging components.
+`docs/reference/agency-homepage-v2.html` — pure HTML/CSS prototype. Ground truth for layout, animation behavior, and visual style when building or debugging components.
