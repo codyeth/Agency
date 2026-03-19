@@ -68,13 +68,14 @@ export default function Hero() {
         {/* H1 */}
         <motion.h1
           variants={fadeUp} initial="hidden" animate="show" transition={{ delay: 0.1 }}
-          className="relative z-10 font-black leading-[1.08] text-white tracking-[-0.03em] mb-5 max-w-[800px]"
-          style={{ fontSize: 'clamp(38px, 5.5vw, 68px)' }}
+          className="relative z-10 font-black leading-[1.12] text-white tracking-[-0.03em] mb-5 max-w-[760px]"
+          style={{ fontSize: 'clamp(34px, 4.5vw, 60px)' }}
         >
           Kết Nối KOC Đúng Ngách
           <br />
+          Đúng Brand.{' '}
           <span className="relative inline-block" style={{ color: '#FCD34D' }}>
-            Đúng Brand. Đúng Kết Quả.
+            Đúng Kết Quả.
             <motion.span
               className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
               style={{ background: 'linear-gradient(90deg, #FCD34D, #F59E0B)', originX: 0 }}

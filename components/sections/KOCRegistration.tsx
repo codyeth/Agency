@@ -5,7 +5,7 @@ import { SITE } from '@/lib/data'
 
 export default function KOCRegistration() {
   return (
-    <section className="py-24 px-12 bg-white" id="koc">
+    <section className="py-24 px-12 bg-white" id="contact">
       <div className="max-w-[1160px] mx-auto grid grid-cols-2 gap-16 items-center">
         {/* Brand side */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}>
@@ -46,6 +46,7 @@ export default function KOCRegistration() {
 
         {/* KOC side */}
         <motion.div
+          id="koc"
           variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}
           className="rounded-3xl p-10"
           style={{ background: '#EEF5FF' }}
