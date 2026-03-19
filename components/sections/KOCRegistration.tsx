@@ -5,7 +5,7 @@ import { SITE } from '@/lib/data'
 
 export default function KOCRegistration() {
   return (
-    <section className="pt-[80px] pb-[125px] px-10 bg-white" id="contact">
+    <section className="bg-white" id="contact" style={{ paddingTop: '80px', paddingBottom: '125px', paddingLeft: '40px', paddingRight: '40px' }}>
       <div className="max-w-[1280px] mx-auto grid grid-cols-2 gap-16 items-center">
         {/* Brand side */}
         <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}>
@@ -48,16 +48,16 @@ export default function KOCRegistration() {
         <motion.div
           id="koc"
           variants={fadeUp} initial="hidden" whileInView="show" viewport={viewport}
-          className="rounded-[16px] p-8"
-          style={{ background: '#E1F3FE' }}
+          className="rounded-[16px] p-9"
+          style={{ background: '#ffffff', border: '1px solid #E5E7EB', boxShadow: '0 4px 24px rgba(0,0,0,0.06)' }}
         >
           <div className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em]
             px-3.5 py-1.5 rounded-[64px] mb-4"
             style={{ background: '#dbeafe', color: '#2463EB' }}>
             ✨ Dành cho KOC
           </div>
-          <h3 className="text-[28px] font-medium leading-[1.2] mb-3" style={{ color: '#111827' }}>Đăng ký nhận brand deal</h3>
-          <p className="text-base font-normal leading-[1.3] mb-6" style={{ color: '#4B5563' }}>
+          <h3 className="text-[24px] font-semibold leading-[1.2] mb-3" style={{ color: '#111827' }}>Đăng ký nhận brand deal</h3>
+          <p className="text-[14px] font-normal leading-[1.5] mb-6" style={{ color: '#4B5563' }}>
             Tham gia network 500+ KOC Home &amp; Living. Nhận brief trực tiếp, không qua trung gian nhiều lớp.
           </p>
           <div className="space-y-3">
@@ -77,7 +77,7 @@ export default function KOCRegistration() {
               />
             ))}
             <motion.button
-              className="w-full h-12 rounded-[64px] text-white font-normal text-base mt-1"
+              className="w-full h-12 rounded-[8px] text-white font-medium text-base mt-1"
               style={{ background: '#2463EB' }}
               whileHover={{ y: -2, boxShadow: '0 8px 24px rgba(36,99,235,0.35)' }}
               whileTap={{ scale: 0.97 }}

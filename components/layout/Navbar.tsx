@@ -27,8 +27,8 @@ export default function Navbar() {
         transition-shadow duration-300 ${scrolled ? 'shadow-[0_4px_24px_rgba(0,0,0,0.08)]' : ''}`}
     >
       {/* Logo */}
-      <a href="/" className="flex items-center gap-2.5 font-semibold text-xl tracking-tight no-underline"
-        style={{ color: '#2463EB' }}>
+      <a href="/" className="flex items-center gap-2.5 no-underline"
+        style={{ fontSize: '16px', fontWeight: 700, color: '#111827' }}>
         <div className="w-9 h-9 rounded-[10px] flex items-center justify-center flex-shrink-0"
           style={{ background: 'linear-gradient(135deg, #2463EB, #1D4FD7)' }}>
           <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5">
@@ -40,7 +40,7 @@ export default function Navbar() {
       </a>
 
       {/* Nav links */}
-      <ul className="flex items-center gap-0.5 list-none">
+      <ul className="flex items-center gap-2 list-none">
         {NAV_LINKS.map((link) => (
           <li key={link.href}>
             <a

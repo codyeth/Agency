@@ -24,9 +24,8 @@ export default function Hero() {
   return (
     <>
       <section
-        className="min-h-[680px] relative overflow-hidden flex flex-col items-center
-          px-10 pt-[120px] pb-0 text-center"
-        style={{ background: 'linear-gradient(160deg, #2463EB 0%, #1D4FD7 55%, #0A1F4E 100%)' }}
+        className="relative overflow-hidden flex flex-col items-center text-center"
+        style={{ minHeight: '560px', paddingLeft: '40px', paddingRight: '40px', paddingTop: '80px', paddingBottom: 0, background: 'linear-gradient(160deg, #2463EB 0%, #1D4FD7 55%, #0A1F4E 100%)' }}
       >
         {/* Orbs */}
         <div className="absolute w-[600px] h-[600px] rounded-full pointer-events-none -top-[200px] -left-[100px]"

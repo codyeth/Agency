@@ -40,7 +40,7 @@ export default function FeatureTabs() {
   const current = FEATURE_TABS.find((t) => t.id === activeTab)!
 
   return (
-    <section className="pt-[80px] pb-[125px] px-10 bg-white" id="services">
+    <section className="bg-white" id="services" style={{ paddingTop: '80px', paddingBottom: '125px', paddingLeft: '40px', paddingRight: '40px' }}>
       <div className="max-w-[1280px] mx-auto">
         {/* Header */}
         <div className="text-center mb-11">

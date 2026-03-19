@@ -5,7 +5,7 @@ import { SERVICES } from '@/lib/data'
 
 export default function ServicesGrid() {
   return (
-    <section className="pt-[80px] pb-[125px] px-10" style={{ background: '#F9FAFB' }}>
+    <section style={{ background: '#F9FAFB', paddingTop: '80px', paddingBottom: '125px', paddingLeft: '40px', paddingRight: '40px' }}>
       <div className="max-w-[1280px] mx-auto">
         <div className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em]
           px-3.5 py-1.5 rounded-[64px] mb-3.5"
@@ -42,7 +42,7 @@ export default function ServicesGrid() {
                 style={{ background: svc.bg }}>
                 {svc.icon}
               </div>
-              <h3 className="text-[28px] font-medium leading-[1.2] mb-2.5" style={{ color: '#111827' }}>{svc.title}</h3>
+              <h3 className="text-[20px] font-semibold leading-[1.2] mb-2.5" style={{ color: '#111827' }}>{svc.title}</h3>
               <p className="text-base font-normal leading-[1.3] mb-5" style={{ color: '#4B5563' }}>{svc.desc}</p>
               <div className="flex flex-wrap gap-1.5">
                 {svc.tags.map((tag) => (

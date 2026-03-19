@@ -6,7 +6,7 @@ import { STATS } from '@/lib/data'
 
 export default function Stats() {
   return (
-    <section className="pt-[80px] pb-[125px] px-10 bg-white">
+    <section className="bg-white" style={{ paddingTop: '80px', paddingBottom: '125px', paddingLeft: '40px', paddingRight: '40px' }}>
       <motion.div
         className="max-w-[1280px] mx-auto grid grid-cols-4 border border-slate-200 rounded-[16px] overflow-hidden"
         variants={staggerContainer}

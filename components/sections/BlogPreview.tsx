@@ -5,7 +5,7 @@ import { BLOG_POSTS } from '@/lib/data'
 
 export default function BlogPreview() {
   return (
-    <section className="pt-[80px] pb-[125px] px-10 bg-white">
+    <section className="bg-white" style={{ paddingTop: '80px', paddingBottom: '125px', paddingLeft: '40px', paddingRight: '40px' }}>
       <div className="max-w-[1280px] mx-auto">
         <div className="flex items-end justify-between mb-14">
           <div>

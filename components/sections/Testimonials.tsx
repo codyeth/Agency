@@ -5,7 +5,7 @@ import { TESTIMONIALS } from '@/lib/data'
 
 export default function Testimonials() {
   return (
-    <section className="pt-[80px] pb-[125px] px-10" style={{ background: '#F9FAFB' }}>
+    <section style={{ background: '#F9FAFB', paddingTop: '80px', paddingBottom: '125px', paddingLeft: '40px', paddingRight: '40px' }}>
       <div className="max-w-[1280px] mx-auto">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.08em]
