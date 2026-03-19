@@ -25,7 +25,7 @@ export default function Hero() {
     <>
       <section
         className="min-h-[580px] relative overflow-hidden flex flex-col items-center
-          px-12 pt-[72px] pb-0 text-center"
+          px-12 pt-[100px] pb-0 text-center"
         style={{ background: 'linear-gradient(160deg, #1B6DEA 0%, #0c3d8e 55%, #071e3d 100%)' }}
       >
         {/* Orbs */}
@@ -45,6 +45,7 @@ export default function Hero() {
                 height: p.size,
                 background: p.color,
                 left: p.left,
+                bottom: 0,
                 borderRadius: p.square ? '2px' : '50%',
                 animation: `floatUp ${p.dur} linear infinite`,
                 animationDelay: p.delay,
@@ -76,8 +77,8 @@ export default function Hero() {
             Đúng Brand. Đúng Kết Quả.
             <motion.span
               className="absolute -bottom-1 left-0 right-0 h-[3px] rounded-full"
-              style={{ background: 'linear-gradient(90deg, #FCD34D, #F59E0B)' }}
-              initial={{ scaleX: 0, originX: 0 }}
+              style={{ background: 'linear-gradient(90deg, #FCD34D, #F59E0B)', originX: 0 }}
+              initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ delay: 0.9, duration: 0.8, ease: 'easeOut' }}
             />

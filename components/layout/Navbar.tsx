@@ -46,7 +46,7 @@ export default function Navbar() {
             <a
               href={link.href}
               className="px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-800
-                hover:text-blue-600 transition-all duration-150 no-underline"
+                hover:text-[#1B6DEA] transition-all duration-150 no-underline"
               style={{ textDecoration: 'none' }}
             >
               {link.label}
@@ -59,7 +59,7 @@ export default function Navbar() {
       <div className="flex gap-2.5 items-center">
         <a href="#contact"
           className="px-5 py-2 rounded-full border border-slate-200 text-sm font-semibold
-            text-slate-800 hover:text-blue-600 transition-all duration-200"
+            text-slate-800 hover:text-[#1B6DEA] transition-all duration-200"
           style={{ textDecoration: 'none' }}>
           Tư vấn ngay
         </a>

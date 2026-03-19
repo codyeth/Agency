@@ -31,6 +31,7 @@ export default function ServicesGrid() {
               variants={staggerItem}
               className="bg-white rounded-3xl p-8 border-2 border-transparent cursor-pointer
                 transition-all duration-300"
+              style={{ boxShadow: '0 2px 12px rgba(27,109,234,0.06)' }}
               whileHover={{
                 borderColor: '#1B6DEA',
                 boxShadow: '0 16px 48px rgba(27,109,234,0.18)',
